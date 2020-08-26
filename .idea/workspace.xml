@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/profile.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="FavoritesManager">
+    <favorites_list name="hippo" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/tjysdsg/hippo.git" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gV6svY9wSH6VoN8TdBSqiC3Z9z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="API test" type="FlutterTestConfigType" factoryName="Flutter Test">
+      <option name="testFile" value="D:\repos\hippo\test\api_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="index test" type="FlutterTestConfigType" factoryName="Flutter Test">
+      <option name="testFile" value="D:\repos\hippo\test\index_test.dart" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flutter.main.dart" />
+      <item itemvalue="Flutter Test.API test" />
+      <item itemvalue="Flutter Test.index test" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="" />
+      <created>1598187623031</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598187623031</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add index page">
+      <created>1598194064636</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598194064636</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add index page">
+      <created>1598233103318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598233103318</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add index page">
+      <created>1598318892853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598318892853</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add index page">
+      <created>1598342855426</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598342855426</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add index page">
+      <created>1598344386249</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598344386249</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add index page">
+      <created>1598350136618</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598350136618</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add index page UI">
+      <created>1598352251721</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598352251721</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add transition to GOP page">
+      <created>1598423610807</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1598423610807</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add GOP API client">
+      <created>1598429912917</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1598429912918</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add profile page">
+      <created>1598431097525</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1598431097525</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add profile page">
+      <created>1598431332033</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598431332033</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Add index page" />
+    <MESSAGE value="Add index page UI" />
+    <MESSAGE value="Add transition to GOP page" />
+    <MESSAGE value="Add GOP API client" />
+    <MESSAGE value="Add profile page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add profile page" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="360" y="71" key="#HTTP_Proxy" timestamp="1598341249906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="71" key="#HTTP_Proxy/0.0.1536.824@0.0.1536.824" timestamp="1598341249906" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598410566315">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598410566315" />
+    <state x="498" y="202" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1598232407406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="202" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1598232407406" />
+    <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598341168085">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1598341168085" />
+    <state x="486" y="134" key="#index_test" timestamp="1598232361518">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="486" y="134" key="#index_test/0.0.1536.824@0.0.1536.824" timestamp="1598232361518" />
+    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1598431330787">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598431330787" />
+    <state width="1491" height="241" key="GridCell.Tab.0.bottom" timestamp="1598455272144">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="241" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598455272144" />
+    <state width="1491" height="241" key="GridCell.Tab.0.center" timestamp="1598455272143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="241" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598455272143" />
+    <state width="1491" height="241" key="GridCell.Tab.0.left" timestamp="1598455272143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="241" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598455272143" />
+    <state width="1491" height="241" key="GridCell.Tab.0.right" timestamp="1598455272143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="241" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598455272143" />
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom" timestamp="1598349853666">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.center" timestamp="1598349853666">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.left" timestamp="1598349853666">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.right" timestamp="1598349853666">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.bottom" timestamp="1598232779526">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.center" timestamp="1598232779526">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.left" timestamp="1598232779526">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.right" timestamp="1598232779526">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1598352282328">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598352282328" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1598318853669">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1598318853669" />
+    <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1598349363397">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1598349363397" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598431647429">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1598431647429" />
+    <state x="0" y="225" width="1476" height="307" key="dock-window-1" timestamp="1598232943450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="225" width="1476" height="307" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1598232943450" />
+    <state x="-66" y="503" width="1476" height="307" key="dock-window-2" timestamp="1598232943450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="-66" y="503" width="1476" height="307" key="dock-window-2/0.0.1536.824@0.0.1536.824" timestamp="1598232943450" />
+    <state width="555" height="500" key="javadoc.popup.new" timestamp="1598431897347">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="555" height="500" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1598431897347" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1598318388423">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598318388423" />
+    <state x="425" y="65" width="672" height="676" key="search.everywhere.popup" timestamp="1598231822535">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="65" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598231822535" />
+  </component>
+</project>

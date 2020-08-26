@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'package:hippo/constants.dart';
+import 'package:hippo/utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
-import 'dart:io';
 
 void wsSendWav({
   String host,
@@ -115,10 +115,9 @@ class _GopState extends State<Gop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title:
-            Text('Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}'),
-      ),
+      appBar: buildAppBar(
+          'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}',
+          context),
       body: Column(
         children: [
           FlatButton(
