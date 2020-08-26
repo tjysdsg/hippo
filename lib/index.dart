@@ -87,7 +87,6 @@ class Index extends StatefulWidget {
 
 class _IndexState extends State<Index> {
   List<Lesson> _data = [];
-  List<bool> _isExpanded = [];
 
   _IndexState() {
     getPracticeData().then((value) {
