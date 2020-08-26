@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:hippo/gop.dart';
 import 'package:hippo/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:hippo/constants.dart' as constants;
@@ -106,15 +107,21 @@ class _IndexState extends State<Index> {
     List<ExpansionTile> panelChildren = [];
 
     for (var i = 0; i < _data.length; ++i) {
-      for (var j = 0; j < _data[i].dialogs.length; ++j) {
-        var lesson = _data[i];
-        var dialog = _data[i].dialogs[j];
+      var lesson = _data[i];
+      for (var j = 0; j < lesson.dialogs.length; ++j) {
+        var dialog = lesson.dialogs[j];
         List<ListTile> childListTiles = dialog.sentences
             .map((sentence) => ListTile(
                   title: Text(toUnicodeString(sentence.transcript)),
                   onTap: () {
-                    print(sentence.id);
-                    // TODO: jump to gop page
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Gop(
+                                  lessonName: lesson.lessonName,
+                                  dialogIdx: j,
+                                  sentenceId: sentence.id,
+                                )));
                   },
                 ))
             .toList();
