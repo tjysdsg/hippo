@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:hippo/gop.dart';
+import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:hippo/constants.dart' as constants;
@@ -71,15 +72,17 @@ Future<List<Lesson>> getPracticeData() async {
     List lessons = json.decode(res.body)['lessons'];
     ret = lessons.map((e) => Lesson.fromJson(e)).toList();
   } else {
+    // TODO: show error to users
     throw Exception("Failed to get a list of practices from server");
   }
   return ret;
 }
 
 class Index extends StatefulWidget {
-  Index({Key key, this.title}) : super(key: key);
+  Index({Key key, this.title, this.gsc}) : super(key: key);
 
   final String title;
+  final GlobalStateController gsc;
 
   @override
   _IndexState createState() => _IndexState();

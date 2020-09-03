@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:hippo/index.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(App());
 }
 
+class GlobalStateController extends GetxController {
+  var loginToken = ''.obs;
+
+  setLoginToken(String token) {
+    loginToken = RxString(token);
+  }
+}
+
 class App extends StatelessWidget {
+  final GlobalStateController gsc = Get.put(GlobalStateController());
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +26,10 @@ class App extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         accentColor: Colors.redAccent,
       ),
-      home: Index(title: 'Practices'),
+      home: Index(
+        title: 'Practices',
+        gsc: gsc,
+      ),
     );
   }
 }

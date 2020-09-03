@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
+import 'package:get/get.dart';
 import 'package:hippo/constants.dart';
+import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
@@ -54,6 +56,7 @@ class Gop extends StatefulWidget {
 }
 
 class _GopState extends State<Gop> {
+  final GlobalStateController _gsc = Get.find();
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
   String _wavPath;
   bool _isRecording = false;

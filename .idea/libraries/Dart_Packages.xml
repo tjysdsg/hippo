@@ -107,6 +107,13 @@
             </list>
           </value>
         </entry>
+        <entry key="get">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/get-3.8.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="http">
           <value>
             <list>
@@ -368,6 +375,7 @@
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/file-5.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/flutter_sound_lite-5.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/flutter_spinkit-4.1.2+1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/get-3.8.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/http-0.12.2/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/http_parser-3.1.4/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/intl-0.16.1/lib" />
