@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'package:get/get.dart';
+import 'package:hippo/base.dart';
 import 'package:hippo/constants.dart';
 import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart';
@@ -65,12 +66,12 @@ class Gop extends StatefulWidget {
   final int dialogIdx;
   final int sentenceId;
 
-  Gop(
-      {Key key,
-      @required this.lessonName,
-      @required this.dialogIdx,
-      @required this.sentenceId})
-      : super(key: key);
+  Gop({
+    Key key,
+    @required this.lessonName,
+    @required this.dialogIdx,
+    @required this.sentenceId,
+  }) : super(key: key);
 
   @override
   _GopState createState() => _GopState();
@@ -100,6 +101,10 @@ class _GopState extends State<Gop> {
   }
 
   void startRecording() async {
+    if (_gsc.loginToken.toString().isEmpty)
+      // TODO: show error
+      throw Exception('Please login first');
+
     // TODO: show toast
     PermissionStatus status = await Permission.microphone.request();
     if (status != PermissionStatus.granted)
@@ -143,10 +148,10 @@ class _GopState extends State<Gop> {
     return Column(
       children: [
         Row(children: [
-          Text(info.initial.isNull ? ' ' : info.initial),
-          Text(info.consonant.isNull ? ' ' : info.consonant),
+          MyText(info.initial.isNull ? ' ' : info.initial),
+          MyText(info.consonant.isNull ? ' ' : info.consonant),
         ]),
-        Text(info.c),
+        MyText(info.c),
       ],
     );
   }
