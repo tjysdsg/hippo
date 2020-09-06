@@ -7,6 +7,7 @@ import 'package:hippo/base.dart';
 import 'package:hippo/constants.dart';
 import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -82,7 +83,7 @@ class _GopState extends State<Gop> {
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
   String _wavPath;
   bool _isRecording = false;
-  String _transcript = '日你妈了个妈卖麻批';
+  String _transcript = '这是个测试嘻嘻';
 
   /// ====== configs ====== ///
   final int _maxCharsPerRow = 5;
@@ -101,11 +102,12 @@ class _GopState extends State<Gop> {
   }
 
   void startRecording() async {
-    if (_gsc.loginToken.toString().isEmpty)
-      // TODO: show error
-      throw Exception('Please login first');
+    if (_gsc.loginToken.toString().isEmpty) {
+      showToast('Please login first');
+      return;
+    }
 
-    // TODO: show toast
+    showToast('Recording', duration: Duration(days: 1));
     PermissionStatus status = await Permission.microphone.request();
     if (status != PermissionStatus.granted)
       throw RecordingPermissionException("Microphone permission not granted");
@@ -128,6 +130,7 @@ class _GopState extends State<Gop> {
     setState(() {
       _isRecording = false;
     });
+    dismissAllToast();
   }
 
   void uploadAudio() {
@@ -138,8 +141,24 @@ class _GopState extends State<Gop> {
       token: _gsc.loginToken.toString(),
       wavPath: _wavPath,
       sentenceId: widget.sentenceId,
-      callback: (msg) {
-        print(msg);
+      callback: (dynamic msg) {
+        if (!(msg is String)) {
+          showToast('Does not understand results returned by server');
+          return;
+        }
+        Map res;
+        try {
+          res = jsonDecode(msg);
+        } catch (e) {
+          showToast('Cannot JSON decode results returned by server');
+          return;
+        }
+        if (res['status'] != 0) {
+          showToast(res['message']);
+          print(res['message']);
+          return;
+        }
+        print(res['data']);
       },
     );
   }

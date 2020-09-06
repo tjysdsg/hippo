@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hippo/index.dart';
 import 'package:get/get.dart';
+import 'package:oktoast/oktoast.dart';
 
 void main() {
   runApp(App());
@@ -21,7 +22,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    var app = MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
@@ -32,6 +33,13 @@ class App extends StatelessWidget {
         title: 'Practices',
         gsc: gsc,
       ),
+    );
+
+    return OKToast(
+      child: app,
+      textPadding: EdgeInsets.all(10),
+      radius: 5,
+      dismissOtherOnShow: true,
     );
   }
 }

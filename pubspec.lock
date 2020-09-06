@@ -165,6 +165,13 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
     source: hosted
     version: "0.0.4"
+  oktoast:
+    dependency: "direct main"
+    description:
+      name: oktoast
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+    source: hosted
+    version: "2.3.2"
   path:
     dependency: transitive
     description:
