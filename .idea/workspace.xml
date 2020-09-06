@@ -7,8 +7,6 @@
     <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/profile.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +224,21 @@
       <option name="project" value="LOCAL" />
       <updated>1599126073223</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Update GOP page, use auth information when uploading audio">
+      <created>1599359114613</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1599359114613</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Update GOP page UI">
+      <created>1599361137614</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1599361137614</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,7 +264,9 @@
     <MESSAGE value="Add profile page" />
     <MESSAGE value="Add profile page UI" />
     <MESSAGE value="Update profile page login/register code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update profile page login/register code" />
+    <MESSAGE value="Update GOP page, use auth information when uploading audio" />
+    <MESSAGE value="Update GOP page UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update GOP page UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="71" key="#HTTP_Proxy" timestamp="1598341249906">
@@ -275,26 +289,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="486" y="134" key="#index_test/0.0.1536.824@0.0.1536.824" timestamp="1598232361518" />
-    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1599126071784">
+    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1599361136322">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599126071784" />
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1599359070500">
+    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599361136322" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599359192551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599359070500" />
-    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1599359070500">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599359192551" />
+    <state width="745" height="209" key="GridCell.Tab.0.bottom" timestamp="1599359165606">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599359070500" />
-    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1599359070499">
+    <state width="745" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599359165606" />
+    <state width="745" height="209" key="GridCell.Tab.0.center" timestamp="1599359165606">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599359070499" />
-    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1599359070500">
+    <state width="745" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599359165606" />
+    <state width="745" height="209" key="GridCell.Tab.0.left" timestamp="1599359165606">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599359070500" />
+    <state width="745" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599359165606" />
+    <state width="745" height="209" key="GridCell.Tab.0.right" timestamp="1599359165606">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="745" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599359165606" />
     <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom" timestamp="1598349853666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -339,10 +357,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1598349363397" />
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599125000580">
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599361218504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1599125000580" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1599361218504" />
     <state x="0" y="225" width="1476" height="307" key="dock-window-1" timestamp="1598232943450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -351,10 +369,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-66" y="503" width="1476" height="307" key="dock-window-2/0.0.1536.824@0.0.1536.824" timestamp="1598232943450" />
-    <state width="555" height="500" key="javadoc.popup.new" timestamp="1598431897347">
+    <state width="555" height="500" key="javadoc.popup.new" timestamp="1599360585049">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="555" height="500" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1598431897347" />
+    <state width="555" height="500" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1599360585049" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1598318388423">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

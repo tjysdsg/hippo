@@ -140,7 +140,7 @@ class _UserFormState extends State<UserForm> {
       },
       child: Text(_loginType == LoginType.login ? 'Login' : 'Register'),
     );
-    return Form(
+    var form = Form(
         key: _formKey,
         child: Column(
             children: inputFields +
@@ -171,6 +171,10 @@ class _UserFormState extends State<UserForm> {
                             : 'Want to login?'),
                       )) // switch register/login button
                 ]));
+    return Obx(() {
+      if (_gsc.loginToken.toString() == '') return form;
+      return Text('Logged in'); // TODO: log out button, and user profile
+    });
   }
 }
 

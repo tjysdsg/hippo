@@ -9,6 +9,27 @@ import 'package:hippo/utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
+class TranscriptGridElementInfo {
+  String c;
+  String initial;
+  String consonant;
+  int tone;
+  double initialScore;
+  double consonantBaseScore;
+  double consonantToneScore;
+
+  TranscriptGridElementInfo(
+      {this.c,
+      this.initial,
+      this.consonant,
+      this.tone,
+      this.initialScore,
+      this.consonantBaseScore,
+      this.consonantToneScore});
+// String observedInitial;
+// String observedConsonant;
+}
+
 void wsSendWav({
   String host,
   int port,
@@ -60,6 +81,10 @@ class _GopState extends State<Gop> {
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
   String _wavPath;
   bool _isRecording = false;
+  String _transcript = '日你妈了个妈卖麻批';
+
+  /// ====== configs ====== ///
+  final int _maxCharsPerRow = 5;
 
   _GopState() {
     _recorder.openAudioSession();
@@ -114,14 +139,58 @@ class _GopState extends State<Gop> {
     );
   }
 
+  Widget getTranscriptGridElement(TranscriptGridElementInfo info) {
+    return Column(
+      children: [
+        Row(children: [
+          Text(info.initial.isNull ? ' ' : info.initial),
+          Text(info.consonant.isNull ? ' ' : info.consonant),
+        ]),
+        Text(info.c),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> transcriptRows = [];
+    List<Widget> rowElements = [];
+    for (int i = 0; i < _transcript.length; ++i) {
+      var ch = _transcript[i];
+      if ((i + 1) % _maxCharsPerRow == 0) {
+        rowElements
+            .add(getTranscriptGridElement(TranscriptGridElementInfo(c: ch)));
+        transcriptRows.add(Row(
+          children: rowElements,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+        ));
+        rowElements = [];
+      } else {
+        rowElements
+            .add(getTranscriptGridElement(TranscriptGridElementInfo(c: ch)));
+      }
+    }
+    if (rowElements.isNotEmpty)
+      transcriptRows.add(Row(
+        children: rowElements,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+      ));
+
+    var details = Column(
+      children: transcriptRows,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+    );
+
     return Scaffold(
       appBar: buildAppBar(
           'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}',
           context),
       body: Column(
         children: [
+          details,
           FlatButton(
             onPressed: () {
               if (_isRecording) {
