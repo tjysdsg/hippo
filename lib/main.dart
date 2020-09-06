@@ -8,9 +8,11 @@ void main() {
 
 class GlobalStateController extends GetxController {
   var loginToken = ''.obs;
+  var username = ''.obs;
 
-  setLoginToken(String token) {
+  setUserInfo(String username, String token) {
     loginToken = RxString(token);
+    this.username = RxString(username);
   }
 }
 

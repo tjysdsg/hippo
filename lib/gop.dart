@@ -104,9 +104,8 @@ class _GopState extends State<Gop> {
     wsSendWav(
       host: ServerInfo.serverUrl,
       port: ServerInfo.serverPort,
-      // TODO: auth
-      username: 'test',
-      token: 'test-test-test',
+      username: _gsc.username.toString(),
+      token: _gsc.loginToken.toString(),
       wavPath: _wavPath,
       sentenceId: widget.sentenceId,
       callback: (msg) {

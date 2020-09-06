@@ -135,7 +135,7 @@ class _UserFormState extends State<UserForm> {
           print('Cannot login');
           return;
         }
-        _gsc.setLoginToken(token);
+        _gsc.setUserInfo(_username, token);
         debugPrint('Login/register success, token: $token');
       },
       child: Text(_loginType == LoginType.login ? 'Login' : 'Register'),
