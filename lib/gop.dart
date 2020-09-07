@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 import 'package:hippo/base.dart';
 import 'package:hippo/constants.dart';
 import 'package:hippo/main.dart';
-import 'package:hippo/utils.dart';
-import 'package:oktoast/oktoast.dart';
+import 'package:hippo/utils.dart' as utils;
+import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -20,16 +20,18 @@ class TranscriptGridElementInfo {
   double consonantBaseScore;
   double consonantToneScore;
 
-  TranscriptGridElementInfo(
-      {this.c,
-      this.initial,
-      this.consonant,
-      this.tone,
-      this.initialScore,
-      this.consonantBaseScore,
-      this.consonantToneScore});
-// String observedInitial;
-// String observedConsonant;
+  // String observedInitial;
+  // String observedConsonant;
+
+  TranscriptGridElementInfo({
+    this.c = ' ',
+    this.initial = ' ',
+    this.consonant = ' ',
+    this.tone = 0,
+    this.initialScore = 0,
+    this.consonantBaseScore = 0,
+    this.consonantToneScore = 0,
+  });
 }
 
 void wsSendWav({
@@ -79,14 +81,18 @@ class Gop extends StatefulWidget {
 }
 
 class _GopState extends State<Gop> {
+  /// ====== configs ====== ///
+  final int _maxCharsPerRow = 5;
+
+  /// ===================== ///
+
   final GlobalStateController _gsc = Get.find();
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
   String _wavPath;
   bool _isRecording = false;
   String _transcript = '这是个测试嘻嘻';
-
-  /// ====== configs ====== ///
-  final int _maxCharsPerRow = 5;
+  var _pinyin = <String>[];
+  var _gop = <List<double>>[];
 
   _GopState() {
     _recorder.openAudioSession();
@@ -103,11 +109,11 @@ class _GopState extends State<Gop> {
 
   void startRecording() async {
     if (_gsc.loginToken.toString().isEmpty) {
-      showToast('Please login first');
+      okToast.showToast('Please login first');
       return;
     }
 
-    showToast('Recording', duration: Duration(days: 1));
+    okToast.showToast('Recording', duration: Duration(days: 1));
     PermissionStatus status = await Permission.microphone.request();
     if (status != PermissionStatus.granted)
       throw RecordingPermissionException("Microphone permission not granted");
@@ -130,7 +136,7 @@ class _GopState extends State<Gop> {
     setState(() {
       _isRecording = false;
     });
-    dismissAllToast();
+    okToast.dismissAllToast();
   }
 
   void uploadAudio() {
@@ -143,47 +149,100 @@ class _GopState extends State<Gop> {
       sentenceId: widget.sentenceId,
       callback: (dynamic msg) {
         if (!(msg is String)) {
-          showToast('Does not understand results returned by server');
+          okToast.showToast('Does not understand results returned by server');
           return;
         }
         Map res;
         try {
           res = jsonDecode(msg);
         } catch (e) {
-          showToast('Cannot JSON decode results returned by server');
+          okToast.showToast('Cannot JSON decode results returned by server');
           return;
         }
         if (res['status'] != 0) {
-          showToast(res['message']);
+          okToast.showToast(res['message']);
           print(res['message']);
           return;
         }
-        print(res['data']);
+        List data = res['data'];
+        print(data);
+        setState(() {
+          _pinyin = List<String>.from(data[0]);
+          _gop = List<List>.from(data[1])
+              .map((List e) => (List<double>.from(e)))
+              .toList();
+        });
       },
     );
+  }
+
+  Color getColorFromGOP(double score) {
+    if (score > -3)
+      return Color.fromARGB(255, 0, 255, 0);
+    else
+      return Color.fromARGB(255, 255, 0, 0);
   }
 
   Widget getTranscriptGridElement(TranscriptGridElementInfo info) {
     return Column(
       children: [
         Row(children: [
-          MyText(info.initial.isNull ? ' ' : info.initial),
-          MyText(info.consonant.isNull ? ' ' : info.consonant),
+          MyText(
+            info.initial ?? ' ',
+            fontSize: 15,
+            textColor: getColorFromGOP(info.initialScore),
+          ),
+          MyText(
+            info.consonant ?? ' ',
+            fontSize: 15,
+            textColor: getColorFromGOP(info.consonantBaseScore),
+            // TODO: display consonant base and tone separately
+          ),
         ]),
-        MyText(info.c),
+        MyText(info.c, fontSize: 20),
       ],
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> transcriptRows = [];
-    List<Widget> rowElements = [];
-    for (int i = 0; i < _transcript.length; ++i) {
-      var ch = _transcript[i];
+    var transcriptRows = <Widget>[];
+    var rowElements = <Widget>[];
+    var elements = <TranscriptGridElementInfo>[];
+    bool prevElementComplete = true;
+    TranscriptGridElementInfo info;
+
+    /// fill in pinyin and scores for each character
+    for (int i = 0; i < _pinyin.length; ++i) {
+      if (prevElementComplete) info = TranscriptGridElementInfo();
+
+      String pinyin = _pinyin[i];
+      if (Pinyin.initials.contains(pinyin)) {
+        info.initial = pinyin;
+        info.initialScore = _gop[i][0];
+        prevElementComplete = false;
+      } else {
+        info.consonant = pinyin;
+        info.consonantBaseScore = _gop[i][0];
+        info.consonantToneScore = _gop[i][1];
+        elements.add(info);
+        prevElementComplete = true;
+      }
+    }
+
+    // TODO: get expected pinyin from server before retrieving GOP
+    if (_pinyin.isEmpty) {
+      elements = _transcript
+          .split('')
+          .map((e) => TranscriptGridElementInfo())
+          .toList();
+    }
+
+    /// add to grid
+    for (int i = 0; i < elements.length; ++i) {
+      elements[i].c = _transcript[i];
       if ((i + 1) % _maxCharsPerRow == 0) {
-        rowElements
-            .add(getTranscriptGridElement(TranscriptGridElementInfo(c: ch)));
+        rowElements.add(getTranscriptGridElement(elements[i]));
         transcriptRows.add(Row(
           children: rowElements,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -191,8 +250,7 @@ class _GopState extends State<Gop> {
         ));
         rowElements = [];
       } else {
-        rowElements
-            .add(getTranscriptGridElement(TranscriptGridElementInfo(c: ch)));
+        rowElements.add(getTranscriptGridElement(elements[i]));
       }
     }
     if (rowElements.isNotEmpty)
@@ -209,7 +267,7 @@ class _GopState extends State<Gop> {
     );
 
     return Scaffold(
-      appBar: buildAppBar(
+      appBar: utils.buildAppBar(
           'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}',
           context),
       body: Column(
