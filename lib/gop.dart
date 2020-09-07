@@ -186,19 +186,22 @@ class _GopState extends State<Gop> {
   Widget getTranscriptGridElement(TranscriptGridElementInfo info) {
     return Column(
       children: [
-        Row(children: [
-          MyText(
-            info.initial ?? ' ',
-            fontSize: 15,
-            textColor: getColorFromGOP(info.initialScore),
-          ),
-          MyText(
-            info.consonant ?? ' ',
-            fontSize: 15,
-            textColor: getColorFromGOP(info.consonantBaseScore),
-            // TODO: display consonant base and tone separately
-          ),
-        ]),
+        Row(
+          children: [
+            MyText(
+              info.initial ?? ' ',
+              fontSize: 20,
+              textColor: getColorFromGOP(info.initialScore),
+            ),
+            MyText(
+              info.consonant ?? ' ',
+              fontSize: 20,
+              textColor: getColorFromGOP(info.consonantBaseScore),
+              // TODO: display consonant base and tone separately
+            ),
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        ),
         MyText(info.c, fontSize: 20),
       ],
     );
@@ -245,7 +248,7 @@ class _GopState extends State<Gop> {
         rowElements.add(getTranscriptGridElement(elements[i]));
         transcriptRows.add(Row(
           children: rowElements,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
         ));
         rowElements = [];
@@ -256,13 +259,13 @@ class _GopState extends State<Gop> {
     if (rowElements.isNotEmpty)
       transcriptRows.add(Row(
         children: rowElements,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
       ));
 
     var details = Column(
       children: transcriptRows,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
     );
 
@@ -270,21 +273,28 @@ class _GopState extends State<Gop> {
       appBar: utils.buildAppBar(
           'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}',
           context),
-      body: Column(
-        children: [
-          details,
-          FlatButton(
-            onPressed: () {
-              if (_isRecording) {
-                stopRecording();
-                uploadAudio();
-              } else {
-                startRecording();
-              }
-            },
-            child: Text('Record'),
-          )
-        ],
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          children: [
+            details,
+            SizedBox(
+              width: 100,
+              child: RaisedButton(
+                onPressed: () {
+                  if (_isRecording) {
+                    stopRecording();
+                    uploadAudio();
+                  } else {
+                    startRecording();
+                  }
+                },
+                child: Text('Record'),
+              ),
+            )
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        ),
       ),
     );
   }
