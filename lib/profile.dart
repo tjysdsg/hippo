@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hippo/main.dart';
 import 'package:http/http.dart' as http;
+import 'package:oktoast/oktoast.dart' as okToast;
 import 'dart:convert';
 import 'package:hippo/constants.dart' as constants;
 
@@ -126,20 +127,23 @@ class _UserFormState extends State<UserForm> {
             token = await register(_username, _password, _realName);
           }
         } catch (e) {
-          // TODO: show error
-          print('Cannot login: $e');
+          okToast.showToast('Cannot login: $e');
           return;
         }
         if (token == '') {
-          // TODO: show error
-          print('Cannot login');
+          okToast.showToast('Cannot login');
           return;
         }
         _gsc.setUserInfo(_username, token);
         debugPrint('Login/register success, token: $token');
+
+        /// FIXME: force redraw, since GetX doesn't seem to update
+        setState(() {});
       },
       child: Text(_loginType == LoginType.login ? 'Login' : 'Register'),
     );
+
+    /// login/register form
     var form = Form(
         key: _formKey,
         child: Column(
@@ -171,9 +175,13 @@ class _UserFormState extends State<UserForm> {
                             : 'Want to login?'),
                       )) // switch register/login button
                 ]));
+
+    /// =========================== ///
     return Obx(() {
-      if (_gsc.loginToken.toString() == '') return form;
-      return Text('Logged in'); // TODO: log out button, and user profile
+      if (_gsc.loginToken.value == '')
+        return form;
+      else
+        return Text('Logged in'); // TODO: log out button, and user profile
     });
   }
 }
