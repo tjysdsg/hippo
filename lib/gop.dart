@@ -269,6 +269,40 @@ class _GopState extends State<Gop> {
       crossAxisAlignment: CrossAxisAlignment.center,
     );
 
+    List<Widget> btns = [
+      SizedBox(
+        width: 100,
+        child: RaisedButton(
+          onPressed: () {
+            if (_isRecording) {
+              stopRecording();
+              uploadAudio();
+            } else {
+              startRecording();
+            }
+          },
+          child: Text('Record'),
+        ),
+      )
+    ];
+
+    /// cancel button
+    if (_isRecording) {
+      btns.insert(
+          0,
+          SizedBox(
+              width: 100,
+              child: RaisedButton(
+                onPressed: () {
+                  stopRecording();
+                },
+                child: Text('Cancel'),
+              )));
+    }
+
+    // TODO: replay button
+
+    /// ==================================== ///
     return Scaffold(
       appBar: utils.buildAppBar(
           'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}',
@@ -278,20 +312,10 @@ class _GopState extends State<Gop> {
         child: Column(
           children: [
             details,
-            SizedBox(
-              width: 100,
-              child: RaisedButton(
-                onPressed: () {
-                  if (_isRecording) {
-                    stopRecording();
-                    uploadAudio();
-                  } else {
-                    startRecording();
-                  }
-                },
-                child: Text('Record'),
-              ),
-            )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: btns,
+            ),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
         ),
