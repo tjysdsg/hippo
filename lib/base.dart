@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 class MyText extends StatefulWidget {
@@ -5,11 +7,12 @@ class MyText extends StatefulWidget {
   final double fontSize;
   final Color textColor;
 
-  MyText(this.text,
-      {Key key,
-      this.fontSize = 16,
-      this.textColor = const Color.fromARGB(255, 0, 0, 0)})
-      : super(key: key);
+  MyText(
+    this.text, {
+    Key key,
+    this.fontSize = 16,
+    this.textColor = const Color.fromARGB(255, 0, 0, 0),
+  }) : super(key: key);
 
   @override
   _MyTextState createState() => _MyTextState();

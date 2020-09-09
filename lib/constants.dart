@@ -395,9 +395,15 @@ class Pinyin {
     "üě": "üe",
     "üè": "üe",
   };
+  static final Map<int, String> toneNumberToString = {
+    0: ' ',
+    1: 'ˍ',
+    2: 'ˏ',
+    3: 'ˬ',
+    4: 'ˎ',
+  };
 
-/*
-  static final consonant2TonePos = {
+  static final Map<String, int> consonant2TonePos = {
     "a": 0,
     "ā": 0,
     "á": 0,
@@ -579,5 +585,4 @@ class Pinyin {
     "üě": 1,
     "üè": 1,
   };
-   */
 }

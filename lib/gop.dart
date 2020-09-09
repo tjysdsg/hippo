@@ -26,7 +26,7 @@ class TranscriptGridElementInfo {
   TranscriptGridElementInfo({
     this.c = ' ',
     this.initial = ' ',
-    this.consonant = ' ',
+    this.consonant,
     this.tone = 0,
     this.initialScore = 0,
     this.consonantBaseScore = 0,
@@ -68,12 +68,14 @@ class Gop extends StatefulWidget {
   final String lessonName;
   final int dialogIdx;
   final int sentenceId;
+  final String transcript;
 
   Gop({
     Key key,
     @required this.lessonName,
     @required this.dialogIdx,
     @required this.sentenceId,
+    @required this.transcript,
   }) : super(key: key);
 
   @override
@@ -90,7 +92,6 @@ class _GopState extends State<Gop> {
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
   String _wavPath;
   bool _isRecording = false;
-  String _transcript = '这是个测试嘻嘻';
   var _pinyin = <String>[];
   var _gop = <List<double>>[];
 
@@ -184,25 +185,68 @@ class _GopState extends State<Gop> {
   }
 
   Widget getTranscriptGridElement(TranscriptGridElementInfo info) {
-    return Column(
+    String initial = info.initial ?? '';
+    String consonant = info.consonant ?? '';
+    String pinyinTone = '';
+    String consonantBase = '';
+    if (consonant != '') {
+      int tone = Pinyin.consonant2Tone[consonant];
+      int tonePos = Pinyin.consonant2TonePos[consonant];
+      if (tonePos == 0) {
+        pinyinTone +=
+            Pinyin.toneNumberToString[tone] + ' ' * (consonant.length - 1);
+      } else {
+        pinyinTone +=
+            ' ' * (consonant.length - 1) + Pinyin.toneNumberToString[tone];
+      }
+      consonantBase = Pinyin.consonant2Base[consonant];
+    }
+
+    var pinyinDisplay = Column(
       children: [
         Row(
           children: [
+            /// placeholder to align with initial
             MyText(
-              info.initial ?? ' ',
+              ' ' * initial.length,
               fontSize: 20,
-              textColor: getColorFromGOP(info.initialScore),
             ),
+
+            /// tone
             MyText(
-              info.consonant ?? ' ',
+              pinyinTone,
               fontSize: 20,
-              textColor: getColorFromGOP(info.consonantBaseScore),
-              // TODO: display consonant base and tone separately
+              textColor: getColorFromGOP(info.consonantToneScore),
             ),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceAround,
         ),
-        MyText(info.c, fontSize: 20),
+
+        /// base pinyin
+        Row(
+          children: [
+            MyText(
+              info.initial ?? '',
+              fontSize: 20,
+              textColor: getColorFromGOP(info.initialScore),
+            ),
+            MyText(
+              consonantBase,
+              fontSize: 20,
+              textColor: getColorFromGOP(info.consonantBaseScore),
+            ),
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        ),
+      ],
+    );
+    return Column(
+      children: [
+        pinyinDisplay,
+        MyText(
+          info.c,
+          fontSize: 20,
+        ),
       ],
     );
   }
@@ -214,6 +258,7 @@ class _GopState extends State<Gop> {
     var elements = <TranscriptGridElementInfo>[];
     bool prevElementComplete = true;
     TranscriptGridElementInfo info;
+    String transcript = utils.toUnicodeString(widget.transcript);
 
     /// fill in pinyin and scores for each character
     for (int i = 0; i < _pinyin.length; ++i) {
@@ -235,15 +280,13 @@ class _GopState extends State<Gop> {
 
     // TODO: get expected pinyin from server before retrieving GOP
     if (_pinyin.isEmpty) {
-      elements = _transcript
-          .split('')
-          .map((e) => TranscriptGridElementInfo())
-          .toList();
+      elements =
+          transcript.split('').map((e) => TranscriptGridElementInfo()).toList();
     }
 
     /// add to grid
     for (int i = 0; i < elements.length; ++i) {
-      elements[i].c = _transcript[i];
+      elements[i].c = transcript[i];
       if ((i + 1) % _maxCharsPerRow == 0) {
         rowElements.add(getTranscriptGridElement(elements[i]));
         transcriptRows.add(Row(

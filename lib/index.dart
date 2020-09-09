@@ -123,6 +123,7 @@ class _IndexState extends State<Index> {
                                   lessonName: lesson.lessonName,
                                   dialogIdx: j,
                                   sentenceId: sentence.id,
+                                  transcript: sentence.transcript,
                                 )));
                   },
                 ))
