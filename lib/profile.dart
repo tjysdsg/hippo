@@ -62,8 +62,7 @@ class _UserFormState extends State<UserForm> {
   String _realName = '';
   LoginType _loginType = LoginType.login;
 
-  @override
-  Widget build(BuildContext context) {
+  Widget buildAuthForm(BuildContext context) {
     // TODO: validate username, password and realName
     List<Widget> inputFields = [
       /// username
@@ -135,6 +134,8 @@ class _UserFormState extends State<UserForm> {
           return;
         }
         _gsc.setUserInfo(_username, token);
+
+        /// save login token to cache
         debugPrint('Login/register success, token: $token');
 
         /// FIXME: force redraw, since GetX doesn't seem to update
@@ -175,13 +176,37 @@ class _UserFormState extends State<UserForm> {
                             : 'Want to login?'),
                       )) // switch register/login button
                 ]));
+    return form;
+  }
 
-    /// =========================== ///
+  Widget buildProfileDisplay(BuildContext context) {
+    // TODO: log out button, and user profile
+    return Column(
+      children: [
+        Text('Logged in'),
+        RaisedButton(
+          child: Text('Logout'),
+          onPressed: () {
+            _gsc.clearUserInfo();
+            _username = '';
+            _password = '';
+            _realName = '';
+
+            /// FIXME: force redraw, since GetX doesn't seem to update
+            setState(() {});
+          },
+        )
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Obx(() {
       if (_gsc.loginToken.value == '')
-        return form;
+        return buildAuthForm(context);
       else
-        return Text('Logged in'); // TODO: log out button, and user profile
+        return buildProfileDisplay(context);
     });
   }
 }

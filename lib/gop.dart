@@ -47,6 +47,7 @@ void wsSendWav({
   int sampleRate = 16000,
   void callback(dynamic data),
 }) async {
+  debugPrint('Uploading audio using username=$username, token=$token');
   var meta = {
     'ext': extName,
     'token': token,

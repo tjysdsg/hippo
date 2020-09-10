@@ -2,6 +2,27 @@
   <library name="Dart Packages" type="DartPackagesLibraryType">
     <properties>
       <option name="packageNameToDirsMap">
+        <entry key="_fe_analyzer_shared">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/_fe_analyzer_shared-6.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="analyzer">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/analyzer-0.39.14/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="args">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/args-1.6.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="async">
           <value>
             <list>
@@ -13,6 +34,62 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/boolean_selector-2.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="build">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build-1.3.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="build_config">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_config-0.4.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="build_daemon">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_daemon-2.1.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="build_resolvers">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_resolvers-1.3.11/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="build_runner">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_runner-1.10.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="build_runner_core">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_runner_core-6.0.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="built_collection">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/built_collection-4.3.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="built_value">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/built_value-7.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -30,10 +107,31 @@
             </list>
           </value>
         </entry>
+        <entry key="checked_yaml">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/checked_yaml-1.0.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="cli_util">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/cli_util-0.1.4/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="clock">
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/clock-1.0.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="code_builder">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/code_builder-3.4.1/lib" />
             </list>
           </value>
         </entry>
@@ -58,10 +156,31 @@
             </list>
           </value>
         </entry>
+        <entry key="csslib">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/csslib-0.16.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="cupertino_icons">
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/cupertino_icons-0.1.3/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="dart_style">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/dart_style-1.3.6/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="dartx">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/dartx-0.5.0/lib" />
             </list>
           </value>
         </entry>
@@ -76,6 +195,13 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/file-5.2.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="fixnum">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/fixnum-0.10.11/lib" />
             </list>
           </value>
         </entry>
@@ -114,10 +240,59 @@
             </list>
           </value>
         </entry>
+        <entry key="glob">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/glob-1.2.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="graphs">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/graphs-0.2.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="hive">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/hive-1.4.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="hive_flutter">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/hive_flutter-0.3.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="hive_generator">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/hive_generator-0.7.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="html">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/html-0.14.0+3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="http">
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/http-0.12.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="http_multi_server">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/http_multi_server-2.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -132,6 +307,27 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/intl-0.16.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="io">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/io-0.3.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="js">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/js-0.6.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="json_annotation">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/json_annotation-3.0.1/lib" />
             </list>
           </value>
         </entry>
@@ -163,6 +359,13 @@
             </list>
           </value>
         </entry>
+        <entry key="mime">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/mime-0.9.7/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="nested">
           <value>
             <list>
@@ -170,10 +373,31 @@
             </list>
           </value>
         </entry>
+        <entry key="node_interop">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/node_interop-1.1.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="node_io">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/node_io-1.1.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="oktoast">
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/oktoast-2.3.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="package_config">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/package_config-1.9.3/lib" />
             </list>
           </value>
         </entry>
@@ -247,6 +471,13 @@
             </list>
           </value>
         </entry>
+        <entry key="pool">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/pool-1.4.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="process">
           <value>
             <list>
@@ -261,10 +492,45 @@
             </list>
           </value>
         </entry>
+        <entry key="pub_semver">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/pub_semver-1.4.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="pubspec_parse">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/pubspec_parse-0.1.5/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="quiver">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/quiver-2.1.3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="recase">
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/recase-2.0.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shelf">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/shelf-0.7.9/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shelf_web_socket">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/shelf_web_socket-0.2.3/lib" />
             </list>
           </value>
         </entry>
@@ -289,6 +555,13 @@
             </list>
           </value>
         </entry>
+        <entry key="source_gen">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/source_gen-0.9.6/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="source_span">
           <value>
             <list>
@@ -307,6 +580,13 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/stream_channel-2.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="stream_transform">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/stream_transform-1.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -338,6 +618,20 @@
             </list>
           </value>
         </entry>
+        <entry key="time">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/time-1.3.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="timing">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/timing-0.1.1+2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="typed_data">
           <value>
             <list>
@@ -359,6 +653,20 @@
             </list>
           </value>
         </entry>
+        <entry key="watcher">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/watcher-0.9.7+15/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="web_socket_channel">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/web_socket_channel-1.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="xdg_directories">
           <value>
             <list>
@@ -366,32 +674,71 @@
             </list>
           </value>
         </entry>
+        <entry key="yaml">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/yaml-2.2.1/lib" />
+            </list>
+          </value>
+        </entry>
       </option>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/_fe_analyzer_shared-6.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/analyzer-0.39.14/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/args-1.6.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/async-2.4.2/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/boolean_selector-2.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build-1.3.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_config-0.4.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_daemon-2.1.4/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_resolvers-1.3.11/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_runner-1.10.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/build_runner_core-6.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/built_collection-4.3.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/built_value-7.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/characters-1.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/charcode-1.1.3/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/checked_yaml-1.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/cli_util-0.1.4/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/clock-1.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/code_builder-3.4.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/collection-1.14.13/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/convert-2.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/crypto-2.1.5/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/csslib-0.16.2/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/cupertino_icons-0.1.3/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/dart_style-1.3.6/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/dartx-0.5.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/fake_async-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/file-5.2.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/fixnum-0.10.11/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/flutter_sound_lite-5.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/flutter_spinkit-4.1.2+1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/get-3.8.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/glob-1.2.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/graphs-0.2.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/hive-1.4.4/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/hive_flutter-0.3.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/hive_generator-0.7.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/html-0.14.0+3/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/http-0.12.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/http_multi_server-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/http_parser-3.1.4/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/intl-0.16.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/io-0.3.4/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/js-0.6.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/json_annotation-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/logger-0.7.0+2/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/logging-0.11.4/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/matcher-0.12.8/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/meta-1.1.8/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/mime-0.9.7/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/nested-0.0.4/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/node_interop-1.1.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/node_io-1.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/oktoast-2.3.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/package_config-1.9.3/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/path-1.7.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/path_provider-1.6.14/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/path_provider_linux-0.0.1+2/lib" />
@@ -402,22 +749,35 @@
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/permission_handler_platform_interface-2.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/platform-2.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/plugin_platform_interface-1.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/pool-1.4.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/process-3.0.13/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/provider-4.3.2+1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/pub_semver-1.4.4/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/pubspec_parse-0.1.5/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/quiver-2.1.3/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/recase-2.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/shelf-0.7.9/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/shelf_web_socket-0.2.3/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/socket_io_client-0.9.11/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/socket_io_common-0.9.2/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/source_gen-0.9.6/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/source_span-1.7.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/stack_trace-1.9.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/stream_channel-2.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/stream_transform-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/string_scanner-1.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/synchronized-2.2.0+2/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/term_glyph-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/test_api-0.2.17/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/time-1.3.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/timing-0.1.1+2/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/typed_data-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/uuid-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/vector_math-2.0.8/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/watcher-0.9.7+15/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/web_socket_channel-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/xdg_directories-0.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub/yaml-2.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/packages/flutter/lib" />
       <root url="file://$PROJECT_DIR$/../flutter/packages/flutter_test/lib" />
