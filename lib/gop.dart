@@ -325,7 +325,7 @@ class _GopState extends State<Gop> {
               startRecording();
             }
           },
-          child: Text('Record'),
+          child: Text(_isRecording ? 'Stop' : 'Record'),
         ),
       )
     ];
