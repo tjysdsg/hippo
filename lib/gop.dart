@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'package:get/get.dart';
@@ -61,6 +62,25 @@ void wsSendWav({
   socket.add(data);
   socket.listen((msg) {
     callback(msg);
+    socket.close();
+  });
+}
+
+void tts({
+  String host,
+  int port,
+  String transcript,
+  void callback(Uint8List data),
+}) async {
+  debugPrint('Calling tts API for transcript=$transcript');
+  var payload = {
+    'transcript': transcript,
+  };
+  var socket = await WebSocket.connect('ws://$host:$port/tts');
+  socket.add(json.encode(payload));
+  socket.listen((dynamic msg) {
+    debugPrint('Received tts response');
+    callback(msg as Uint8List);
     socket.close();
   });
 }
@@ -306,6 +326,25 @@ class _GopState extends State<Gop> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
       ));
+
+    // tts button
+    transcriptRows.add(RaisedButton(
+      child: Text('tts'),
+      onPressed: () {
+        tts(
+          host: ServerInfo.serverUrl,
+          port: ServerInfo.serverPort,
+          transcript: transcript,
+          callback: (Uint8List data) async {
+            debugPrint('Receiving tts audio data');
+            String path =
+                (await getExternalStorageDirectory()).path + '/tmp.wav';
+            File(path).writeAsBytesSync(data);
+            debugPrint('tts results written to $path');
+          },
+        );
+      },
+    ));
 
     var details = Column(
       children: transcriptRows,
