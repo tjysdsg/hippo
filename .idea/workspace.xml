@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/settings_aar.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -374,7 +374,28 @@
       <option name="project" value="LOCAL" />
       <updated>1599800682682</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Add tts button">
+      <created>1600073439363</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1600073439363</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Implement player TTS audio">
+      <created>1600691515172</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1600691515172</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Implement playing TTS audio">
+      <created>1600691534966</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1600691534966</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -413,7 +434,10 @@
     <MESSAGE value="Save login information to cache" />
     <MESSAGE value="Allow user to logout" />
     <MESSAGE value="Fix minor UI issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix minor UI issues" />
+    <MESSAGE value="Add tts button" />
+    <MESSAGE value="Implement player TTS audio" />
+    <MESSAGE value="Implement playing TTS audio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement playing TTS audio" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="71" key="#HTTP_Proxy" timestamp="1598341249906">
@@ -436,30 +460,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="486" y="134" key="#index_test/0.0.1536.824@0.0.1536.824" timestamp="1598232361518" />
-    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1599800681006">
+    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1600691533695">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599800681006" />
+    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1600691533695" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599359192551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599359192551" />
-    <state width="1491" height="196" key="GridCell.Tab.0.bottom" timestamp="1600070325474">
+    <state width="1491" height="196" key="GridCell.Tab.0.bottom" timestamp="1600692707325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600070325474" />
-    <state width="1491" height="196" key="GridCell.Tab.0.center" timestamp="1600070325474">
+    <state width="1491" height="196" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600692707325" />
+    <state width="1491" height="196" key="GridCell.Tab.0.center" timestamp="1600692707325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600070325474" />
-    <state width="1491" height="196" key="GridCell.Tab.0.left" timestamp="1600070325473">
+    <state width="1491" height="196" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600692707325" />
+    <state width="1491" height="196" key="GridCell.Tab.0.left" timestamp="1600692707325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600070325473" />
-    <state width="1491" height="196" key="GridCell.Tab.0.right" timestamp="1600070325474">
+    <state width="1491" height="196" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600692707325" />
+    <state width="1491" height="196" key="GridCell.Tab.0.right" timestamp="1600692707325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600070325474" />
+    <state width="1491" height="196" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600692707325" />
     <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom" timestamp="1598349853666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -504,10 +528,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1598349363397" />
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599718077256">
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600678427441">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1599718077256" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600678427441" />
     <state x="0" y="225" width="1476" height="307" key="dock-window-1" timestamp="1598232943450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

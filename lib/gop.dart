@@ -111,6 +111,7 @@ class _GopState extends State<Gop> {
 
   final GlobalStateController _gsc = Get.find();
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
+  FlutterSoundPlayer _player = FlutterSoundPlayer();
   String _wavPath;
   bool _isRecording = false;
   var _pinyin = <String>[];
@@ -118,6 +119,7 @@ class _GopState extends State<Gop> {
 
   _GopState() {
     _recorder.openAudioSession();
+    _player.openAudioSession();
   }
 
   @override
@@ -125,6 +127,10 @@ class _GopState extends State<Gop> {
     if (_recorder != null) {
       _recorder.closeAudioSession();
       _recorder = null;
+    }
+    if (_player != null) {
+      _player.closeAudioSession();
+      _player = null;
     }
     super.dispose();
   }
@@ -327,20 +333,35 @@ class _GopState extends State<Gop> {
         crossAxisAlignment: CrossAxisAlignment.center,
       ));
 
-    // tts button
+    /// tts button
     transcriptRows.add(RaisedButton(
       child: Text('tts'),
       onPressed: () {
+        /// get tts from server
         tts(
           host: ServerInfo.serverUrl,
           port: ServerInfo.serverPort,
           transcript: transcript,
           callback: (Uint8List data) async {
+            /// save tts result to wav file
             debugPrint('Receiving tts audio data');
             String path =
                 (await getExternalStorageDirectory()).path + '/tmp.wav';
-            File(path).writeAsBytesSync(data);
+            var fileContent = await utils.raw2Wav(data);
+            File ttsFile = File(path);
+            ttsFile.writeAsBytesSync(fileContent);
             debugPrint('tts results written to $path');
+
+            /// player tts
+            debugPrint('playing tts');
+            _player.setSubscriptionDuration(Duration(milliseconds: 10));
+            await _player.startPlayer(
+              fromURI: ttsFile.path,
+              codec: Codec.pcm16WAV,
+              whenFinished: () {
+                debugPrint('played tts');
+              },
+            );
           },
         );
       },
