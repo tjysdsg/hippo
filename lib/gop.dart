@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:hippo/feedback.dart';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
@@ -367,6 +368,18 @@ class _GopState extends State<Gop> {
       },
     ));
 
+    /// feedback button
+    transcriptRows.add(RaisedButton(
+      child: Text('feedback?'),
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => FeedbackPage(
+                      sentenceId: widget.sentenceId,
+                    )));
+      },
+    ));
     var details = Column(
       children: transcriptRows,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
