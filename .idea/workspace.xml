@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/feedback.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/feedback.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/feedback.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -404,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600693013695</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Implement feedback UI">
+      <created>1600772071230</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1600772071230</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,7 +451,8 @@
     <MESSAGE value="Add tts button" />
     <MESSAGE value="Implement player TTS audio" />
     <MESSAGE value="Implement playing TTS audio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement playing TTS audio" />
+    <MESSAGE value="Implement feedback UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement feedback UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="71" key="#HTTP_Proxy" timestamp="1598341249906">
@@ -469,30 +475,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="486" y="134" key="#index_test/0.0.1536.824@0.0.1536.824" timestamp="1598232361518" />
-    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1600693012401">
+    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1600772069380">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1600693012401" />
+    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1600772069380" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599359192551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599359192551" />
-    <state width="1491" height="196" key="GridCell.Tab.0.bottom" timestamp="1600772009827">
+    <state width="1491" height="196" key="GridCell.Tab.0.bottom" timestamp="1600772107906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600772009827" />
-    <state width="1491" height="196" key="GridCell.Tab.0.center" timestamp="1600772009826">
+    <state width="1491" height="196" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600772107906" />
+    <state width="1491" height="196" key="GridCell.Tab.0.center" timestamp="1600772107905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600772009826" />
-    <state width="1491" height="196" key="GridCell.Tab.0.left" timestamp="1600772009825">
+    <state width="1491" height="196" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600772107905" />
+    <state width="1491" height="196" key="GridCell.Tab.0.left" timestamp="1600772107902">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600772009825" />
-    <state width="1491" height="196" key="GridCell.Tab.0.right" timestamp="1600772009826">
+    <state width="1491" height="196" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600772107902" />
+    <state width="1491" height="196" key="GridCell.Tab.0.right" timestamp="1600772107906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="196" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600772009826" />
+    <state width="1491" height="196" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600772107906" />
     <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom" timestamp="1598349853666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

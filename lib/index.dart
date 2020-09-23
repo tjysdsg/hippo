@@ -72,7 +72,6 @@ Future<List<Lesson>> getPracticeData() async {
     List lessons = json.decode(res.body)['lessons'];
     ret = lessons.map((e) => Lesson.fromJson(e)).toList();
   } else {
-    // TODO: show error to users
     throw Exception("Failed to get a list of practices from server");
   }
   return ret;
