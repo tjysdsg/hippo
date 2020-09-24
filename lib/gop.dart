@@ -206,7 +206,7 @@ class _GopState extends State<Gop> {
   }
 
   Color getColorFromGOP(double score) {
-    if (score > -2)
+    if (score >= -2)
       return Color.fromARGB(255, 0, 255, 0);
     else
       return Color.fromARGB(255, 255, 0, 0);
@@ -336,7 +336,7 @@ class _GopState extends State<Gop> {
 
     /// tts button
     transcriptRows.add(RaisedButton(
-      child: Text('tts'),
+      child: Text('hear'),
       onPressed: () {
         /// get tts from server
         tts(
@@ -417,7 +417,25 @@ class _GopState extends State<Gop> {
               )));
     }
 
-    // TODO: replay button
+    /// replay button
+    if (_wavPath != null && _wavPath != '') {
+      btns.add(SizedBox(
+          width: 100,
+          child: RaisedButton(
+            onPressed: () async {
+              debugPrint('replaying user voice');
+              _player.setSubscriptionDuration(Duration(milliseconds: 10));
+              await _player.startPlayer(
+                fromURI: _wavPath,
+                codec: Codec.pcm16WAV,
+                whenFinished: () {
+                  debugPrint('replayed user voice');
+                },
+              );
+            },
+            child: Text('Replay'),
+          )));
+    }
 
     /// ==================================== ///
     return Scaffold(
