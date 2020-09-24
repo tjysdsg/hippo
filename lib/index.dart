@@ -72,8 +72,8 @@ class _IndexState extends State<Index> {
             .toList();
 
         panelChildren.add(ExpansionTile(
-          title: Text(
-              'Lesson ${lesson.id}, ${toUnicodeString(lesson.lessonName)}, Dialog ${dialog.id}'),
+          title: Text(toUnicodeString(
+              'Lesson ${lesson.id}, ${toUnicodeString(lesson.lessonName)}, Dialog ${dialog.id}')),
           children: childListTiles,
         ));
       }

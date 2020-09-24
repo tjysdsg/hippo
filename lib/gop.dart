@@ -206,7 +206,7 @@ class _GopState extends State<Gop> {
   }
 
   Color getColorFromGOP(double score) {
-    if (score > -3)
+    if (score > -2)
       return Color.fromARGB(255, 0, 255, 0);
     else
       return Color.fromARGB(255, 255, 0, 0);

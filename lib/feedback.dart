@@ -134,8 +134,9 @@ class _FeedbackPageState extends State<FeedbackPage> {
               ] +
               (_feedbacks != null
                   ? _feedbacks
-                      .map((FeedbackInfo f) =>
-                          Card(child: MyText('${f.content}\nby ${f.username}')))
+                      .map((FeedbackInfo f) => Card(
+                          child: MyText(utils.toUnicodeString(
+                              '${f.content}\nby ${f.username}'))))
                       .toList()
                   : []),
         ),
