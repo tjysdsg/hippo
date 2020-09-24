@@ -36,12 +36,10 @@ class _IndexState extends State<Index> {
   List<Lesson> _data = [];
 
   _IndexState() {
-    getPracticeData().then((value) {
-      _data = value;
-    });
+    refreshData();
   }
 
-  refreshData() {
+  Future<void> refreshData() async {
     getPracticeData().then((value) {
       setState(() {
         _data = value;
@@ -81,8 +79,11 @@ class _IndexState extends State<Index> {
       }
     }
 
-    return ListView(
-      children: panelChildren,
+    return RefreshIndicator(
+      onRefresh: refreshData,
+      child: ListView(
+        children: panelChildren,
+      ),
     );
   }
 
