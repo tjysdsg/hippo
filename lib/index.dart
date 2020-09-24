@@ -1,67 +1,12 @@
 import 'dart:convert';
 import 'package:hippo/gop.dart';
+import 'package:hippo/lesson_editor.dart';
 import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:hippo/constants.dart' as constants;
 import 'package:flutter/material.dart';
-
-class Sentence {
-  int id;
-  String transcript;
-
-  Sentence({this.id, this.transcript});
-
-  factory Sentence.fromJson(Map<String, dynamic> json) {
-    return Sentence(id: json['id'], transcript: json['transcript']);
-  }
-
-  @override
-  String toString() {
-    return 'Sentence $id, $transcript';
-  }
-}
-
-class Dialog {
-  int id;
-  List<Sentence> sentences;
-
-  Dialog({this.id, this.sentences});
-
-  factory Dialog.fromJson(Map<String, dynamic> json) {
-    List sentences = json['sentences'];
-    return Dialog(
-        id: json['id'],
-        sentences: sentences.map((e) => Sentence.fromJson(e)).toList());
-  }
-
-  @override
-  String toString() {
-    return 'Dialog $id, $sentences';
-  }
-}
-
-class Lesson {
-  int id;
-  String lessonName;
-  List<Dialog> dialogs;
-
-  Lesson({this.id, this.lessonName, this.dialogs});
-
-  factory Lesson.fromJson(Map<String, dynamic> json) {
-    List dialogs = json['dialogs'];
-    return Lesson(
-      id: json['id'],
-      lessonName: json['lesson_name'],
-      dialogs: dialogs.map((e) => Dialog.fromJson(e)).toList(),
-    );
-  }
-
-  @override
-  String toString() {
-    return 'Lesson $id, $lessonName, $dialogs';
-  }
-}
+import 'package:hippo/models.dart';
 
 Future<List<Lesson>> getPracticeData() async {
   List<Lesson> ret;
@@ -146,6 +91,18 @@ class _IndexState extends State<Index> {
     return Scaffold(
       appBar: buildAppBar(widget.title, context),
       body: _getPracticeList(),
+
+      /// button to add new lessons by teachers
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LessonEditor()),
+          );
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue,
+      ),
     );
   }
 }

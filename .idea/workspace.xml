@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/feedback.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/feedback.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lesson_editor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lesson_editor.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,34 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Add index page">
-      <created>1598194064636</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1598194064636</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add index page">
-      <created>1598233103318</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1598233103318</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Add index page">
-      <created>1598318892853</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1598318892853</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add index page">
-      <created>1598342855426</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1598342855426</updated>
     </task>
     <task id="LOCAL-00005" summary="Add index page">
       <created>1598344386249</created>
@@ -422,7 +394,35 @@
       <option name="project" value="LOCAL" />
       <updated>1600848932369</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Allow teacher to view feedbacks">
+      <created>1600849268286</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1600849268287</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Allow teacher to view feedbacks">
+      <created>1600849312480</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1600849312480</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Allow teachers to add lessons">
+      <created>1600917162262</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1600917162262</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Allow teachers to add lessons">
+      <created>1600918423022</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1600918423022</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,7 +442,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add index page" />
     <MESSAGE value="Add index page UI" />
     <MESSAGE value="Add transition to GOP page" />
     <MESSAGE value="Add GOP API client" />
@@ -467,7 +466,8 @@
     <MESSAGE value="Implement feedback UI" />
     <MESSAGE value="Allow users to send feedback" />
     <MESSAGE value="Allow teacher to view feedbacks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow teacher to view feedbacks" />
+    <MESSAGE value="Allow teachers to add lessons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow teachers to add lessons" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="71" key="#HTTP_Proxy" timestamp="1598341249906">
@@ -490,10 +490,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="486" y="134" key="#index_test/0.0.1536.824@0.0.1536.824" timestamp="1598232361518" />
-    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1600849267110">
+    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1600918421772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1600849267110" />
+    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1600918421772" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599359192551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -546,10 +546,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
-    <state x="277" y="55" key="SettingsEditor" timestamp="1599463471950">
+    <state x="277" y="55" key="SettingsEditor" timestamp="1600849426632">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599463471950" />
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600849426632" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1598318853669">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -558,10 +558,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1598349363397" />
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600771507624">
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600915526549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600771507624" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600915526549" />
     <state x="0" y="225" width="1476" height="307" key="dock-window-1" timestamp="1598232943450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
