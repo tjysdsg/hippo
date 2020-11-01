@@ -71,6 +71,19 @@ class _FeedbackPageState extends State<FeedbackPage> {
   /// always be null or empty list for student account
   List<FeedbackInfo> _feedbacks;
 
+  Future<void> refreshData() async {
+    getFeedback(_gsc.username.value, _gsc.loginToken.value, widget.sentenceId)
+        .then((List<FeedbackInfo> feedbacks) {
+      setState(() {
+        _feedbacks = feedbacks;
+      });
+      debugPrint('Successfully retrieved all feedbacks');
+    }).catchError((e) {
+      // TODO: show error toast
+      debugPrint(e);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var feedbackInput = TextField(
@@ -95,50 +108,44 @@ class _FeedbackPageState extends State<FeedbackPage> {
 
     if (_feedbacks == null) {
       /// prevent sending http request too frequently, requires manual refresh
-      // TODO: pull down refresh
-      getFeedback(_gsc.username.value, _gsc.loginToken.value, widget.sentenceId)
-          .then((List<FeedbackInfo> feedbacks) {
-        setState(() {
-          _feedbacks = feedbacks;
-        });
-        debugPrint('Successfully retrieved all feedbacks');
-      }).catchError((e) {
-        // TODO: show error toast
-        debugPrint(e);
-      });
+      refreshData();
     }
 
     return Scaffold(
       appBar: utils.buildAppBar('Feedback', context),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-        child: ListView(
-          children: <Widget>[
-                Column(
-                  children: [
-                    feedbackInput,
-                    RaisedButton(
-                      child: Text('Submit'),
-                      onPressed: () {
-                        createFeedback(
-                          _gsc.username.value,
-                          _gsc.loginToken.value,
-                          _feedbackContent,
-                          widget.sentenceId,
-                        );
-                        debugPrint('Sent feedback: $_feedbackContent');
-                      },
-                    ),
-                  ],
-                ),
-              ] +
-              (_feedbacks != null
-                  ? _feedbacks
-                      .map((FeedbackInfo f) => Card(
-                          child: MyText(utils.toUnicodeString(
-                              '${f.content}\nby ${f.username}'))))
-                      .toList()
-                  : []),
+        child: RefreshIndicator(
+          onRefresh: refreshData,
+          child: ListView(
+            children: <Widget>[
+                  Column(
+                    children: [
+                      feedbackInput,
+                      RaisedButton(
+                        child: Text('Submit'),
+                        onPressed: () async {
+                          await createFeedback(
+                            _gsc.username.value,
+                            _gsc.loginToken.value,
+                            _feedbackContent,
+                            widget.sentenceId,
+                          );
+                          debugPrint('Sent feedback: $_feedbackContent');
+                          await refreshData();
+                        },
+                      ),
+                    ],
+                  ),
+                ] +
+                (_feedbacks != null
+                    ? _feedbacks
+                        .map((FeedbackInfo f) => Card(
+                            child: MyText(utils.toUnicodeString(
+                                '${f.content}\nby ${f.username}'))))
+                        .toList()
+                    : []),
+          ),
         ),
       ),
     );
