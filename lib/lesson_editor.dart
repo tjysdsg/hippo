@@ -36,7 +36,6 @@ class _LessonEditorState extends State<LessonEditor> {
   List<String> _sentences = [];
 
   // TODO: edit existing lesson
-  // TODO: support editing multiple dialogs
   @override
   Widget build(BuildContext context) {
     List<Widget> fields = [
@@ -88,9 +87,13 @@ class _LessonEditorState extends State<LessonEditor> {
                             .toList())
                   ];
                   models.Lesson lesson = models.Lesson(
-                      id: 0, lessonName: _lessonName, dialogs: dialogs);
+                    id: 0,
+                    lessonName: _lessonName,
+                    dialogs: dialogs,
+                  );
                   await createLesson(lesson);
                   debugPrint('Created a new lesson');
+                  Navigator.pop(context);
                 },
               )
             ],

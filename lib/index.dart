@@ -100,12 +100,13 @@ class _IndexState extends State<Index> {
               setState(() {
                 _data.removeAt(i);
               });
+              refreshData();
             },
             background: Container(color: Colors.red),
             child: ExpansionTile(
               title: Text(
                 toUnicodeString(
-                  'Lesson ${lesson.id}, ${toUnicodeString(lesson.lessonName)}, Dialog ${dialog.id}',
+                  'Lesson ${lesson.id}, ${lesson.lessonName}, Dialog ${dialog.id}',
                 ),
               ),
               children: sentenceList,

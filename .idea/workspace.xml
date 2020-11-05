@@ -7,6 +7,7 @@
     <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lesson_editor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lesson_editor.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,13 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add profile page UI">
-      <created>1598455790836</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1598455790836</updated>
     </task>
     <task id="LOCAL-00013" summary="Update profile page login/register code">
       <created>1599117518279</created>
@@ -422,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604251706767</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Swipe to delete lesson">
+      <created>1604561235802</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1604561235803</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,7 +443,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add profile page UI" />
     <MESSAGE value="Update profile page login/register code" />
     <MESSAGE value="Update GOP page, use auth information when uploading audio" />
     <MESSAGE value="Update GOP page UI" />
@@ -467,7 +467,8 @@
     <MESSAGE value="Update project config files" />
     <MESSAGE value="Allow users to replay their voice" />
     <MESSAGE value="Allow pull down refresh in feedback page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow pull down refresh in feedback page" />
+    <MESSAGE value="Swipe to delete lesson" />
+    <option name="LAST_COMMIT_MESSAGE" value="Swipe to delete lesson" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="71" key="#HTTP_Proxy" timestamp="1598341249906">
@@ -490,30 +491,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="486" y="134" key="#index_test/0.0.1536.824@0.0.1536.824" timestamp="1598232361518" />
-    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1604251705174">
+    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1604561234211">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604251705174" />
+    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604561234211" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599359192551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599359192551" />
-    <state width="1491" height="98" key="GridCell.Tab.0.bottom" timestamp="1604404104782">
+    <state width="1491" height="91" key="GridCell.Tab.0.bottom" timestamp="1604561470397">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="98" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604404104782" />
-    <state width="1491" height="98" key="GridCell.Tab.0.center" timestamp="1604404104782">
+    <state width="1491" height="91" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604561470397" />
+    <state width="1491" height="91" key="GridCell.Tab.0.center" timestamp="1604561470396">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="98" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604404104782" />
-    <state width="1491" height="98" key="GridCell.Tab.0.left" timestamp="1604404104782">
+    <state width="1491" height="91" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604561470396" />
+    <state width="1491" height="91" key="GridCell.Tab.0.left" timestamp="1604561470396">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="98" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604404104782" />
-    <state width="1491" height="98" key="GridCell.Tab.0.right" timestamp="1604404104782">
+    <state width="1491" height="91" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604561470396" />
+    <state width="1491" height="91" key="GridCell.Tab.0.right" timestamp="1604561470396">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="98" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604404104782" />
+    <state width="1491" height="91" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604561470396" />
     <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom" timestamp="1598349853666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -558,10 +559,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1598349363397" />
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604560379933">
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604561396531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1604560379933" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1604561396531" />
     <state x="0" y="225" width="1476" height="307" key="dock-window-1" timestamp="1598232943450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
