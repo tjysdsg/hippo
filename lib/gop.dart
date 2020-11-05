@@ -440,7 +440,8 @@ class _GopState extends State<Gop> {
     /// ==================================== ///
     return Scaffold(
       appBar: utils.buildAppBar(
-          'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}',
+          utils.toUnicodeString(
+              'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}'),
           context),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20),
