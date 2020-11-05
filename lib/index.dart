@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:hippo/gop.dart';
+import 'package:flutter/foundation.dart';
 import 'package:hippo/lesson_editor.dart';
 import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart';
@@ -7,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:hippo/constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:hippo/models.dart';
+import 'package:http/http.dart';
 
 Future<List<Lesson>> getPracticeData() async {
   List<Lesson> ret;
@@ -20,6 +22,24 @@ Future<List<Lesson>> getPracticeData() async {
     throw Exception("Failed to get a list of practices from server");
   }
   return ret;
+}
+
+Future<void> deleteLesson(int lessonId) async {
+  // workaround since http.delete doesn't allow body
+  var rq = Request(
+    'DELETE',
+    Uri.parse(
+      'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons',
+    ),
+  );
+  rq.body = json.encode({'lesson_id': lessonId});
+  http.Client client = http.Client();
+  http.StreamedResponse res = await client.send(rq);
+  client.close();
+
+  if (res.statusCode != 200) {
+    throw Exception("Failed to delete lesson id=$lessonId");
+  }
 }
 
 class Index extends StatefulWidget {
@@ -48,13 +68,14 @@ class _IndexState extends State<Index> {
   }
 
   Widget _getPracticeList() {
-    List<ExpansionTile> panelChildren = [];
+    List<Dismissible> lessonDialogList = [];
 
     for (var i = 0; i < _data.length; ++i) {
       var lesson = _data[i];
       for (var j = 0; j < lesson.dialogs.length; ++j) {
         var dialog = lesson.dialogs[j];
-        List<ListTile> childListTiles = dialog.sentences
+        // TODO: implement swipe to delete practices/sentences
+        List<ListTile> sentenceList = dialog.sentences
             .map((sentence) => ListTile(
                   title: Text(toUnicodeString(sentence.transcript)),
                   onTap: () {
@@ -71,18 +92,31 @@ class _IndexState extends State<Index> {
                 ))
             .toList();
 
-        panelChildren.add(ExpansionTile(
-          title: Text(toUnicodeString(
-              'Lesson ${lesson.id}, ${toUnicodeString(lesson.lessonName)}, Dialog ${dialog.id}')),
-          children: childListTiles,
-        ));
+        lessonDialogList.add(Dismissible(
+            key: Key(lesson.id.toString()),
+            onDismissed: (DismissDirection direction) {
+              /// swipe to delete lesson
+              deleteLesson(lesson.id);
+              setState(() {
+                _data.removeAt(i);
+              });
+            },
+            background: Container(color: Colors.red),
+            child: ExpansionTile(
+              title: Text(
+                toUnicodeString(
+                  'Lesson ${lesson.id}, ${toUnicodeString(lesson.lessonName)}, Dialog ${dialog.id}',
+                ),
+              ),
+              children: sentenceList,
+            )));
       }
     }
 
     return RefreshIndicator(
       onRefresh: refreshData,
       child: ListView(
-        children: panelChildren,
+        children: lessonDialogList,
       ),
     );
   }
