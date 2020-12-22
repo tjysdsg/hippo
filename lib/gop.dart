@@ -13,6 +13,9 @@ import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
+const gopScoreLimit = -10;
+
+
 class TranscriptGridElementInfo {
   String c;
   String initial;
@@ -206,7 +209,7 @@ class _GopState extends State<Gop> {
   }
 
   Color getColorFromGOP(double score) {
-    if (score >= -2)
+    if (score >= gopScoreLimit)
       return Color.fromARGB(255, 0, 255, 0);
     else
       return Color.fromARGB(255, 255, 0, 0);

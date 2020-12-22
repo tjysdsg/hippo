@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
-  <component name="FavoritesManager">
-    <favorites_list name="hippo" />
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -41,16 +40,18 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -78,13 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Update profile page login/register code">
-      <created>1599118560474</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1599118560474</updated>
     </task>
     <task id="LOCAL-00015" summary="Update profile page login/register code">
       <created>1599119509993</created>
@@ -422,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604561940385</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Fix appbar title not displaying Chinese correctly">
+      <created>1604562563525</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1604562563525</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,19 +431,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update GOP page, use auth information when uploading audio" />
     <MESSAGE value="Update GOP page UI" />
     <MESSAGE value="Improve UI text" />
     <MESSAGE value="Add toast as feedback to users" />
@@ -467,113 +466,62 @@
     <MESSAGE value="Allow pull down refresh in feedback page" />
     <MESSAGE value="Swipe to delete lesson" />
     <MESSAGE value="Fix not being able to display Chinese in lesson name, close lesson editor automatically once a new lesson is successfully created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix not being able to display Chinese in lesson name, close lesson editor automatically once a new lesson is successfully created" />
+    <MESSAGE value="Fix appbar title not displaying Chinese correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix appbar title not displaying Chinese correctly" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="360" y="71" key="#HTTP_Proxy" timestamp="1598341249906">
+    <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="360" y="71" key="#HTTP_Proxy/0.0.1536.824@0.0.1536.824" timestamp="1598341249906" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600927590425">
+    <state x="648" y="309" key="#Custom_Plugin_Repositories/0.0.1536.824@0.0.1536.824" timestamp="1608638575991" />
+    <state x="548" y="131" key="#HTTP_Proxy" timestamp="1608638569889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1600927590425" />
-    <state x="498" y="202" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1598232407406">
+    <state x="548" y="131" key="#HTTP_Proxy/0.0.1536.824@0.0.1536.824" timestamp="1608638569889" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608638711534">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="202" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1598232407406" />
-    <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598341168085">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1608638711534" />
+    <state x="93" y="93" width="1350" height="638" key="AVDManager" timestamp="1607515137675">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1598341168085" />
-    <state x="486" y="134" key="#index_test" timestamp="1598232361518">
+    <state x="93" y="93" width="1350" height="638" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1607515137675" />
+    <state x="83" y="6" key="CommitChangelistDialog2" timestamp="1604562562193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="486" y="134" key="#index_test/0.0.1536.824@0.0.1536.824" timestamp="1598232361518" />
-    <state x="424" y="6" key="CommitChangelistDialog2" timestamp="1604561939330">
+    <state x="83" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604562562193" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607514790631">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604561939330" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599359192551">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607514790631" />
+    <state width="1491" height="170" key="GridCell.Tab.0.bottom" timestamp="1608638810501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599359192551" />
-    <state width="1491" height="168" key="GridCell.Tab.0.bottom" timestamp="1604562255553">
+    <state width="1491" height="170" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
+    <state width="1491" height="170" key="GridCell.Tab.0.center" timestamp="1608638810501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="168" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604562255553" />
-    <state width="1491" height="168" key="GridCell.Tab.0.center" timestamp="1604562255553">
+    <state width="1491" height="170" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
+    <state width="1491" height="170" key="GridCell.Tab.0.left" timestamp="1608638810501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="168" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604562255553" />
-    <state width="1491" height="168" key="GridCell.Tab.0.left" timestamp="1604562255552">
+    <state width="1491" height="170" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
+    <state width="1491" height="170" key="GridCell.Tab.0.right" timestamp="1608638810501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="168" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604562255552" />
-    <state width="1491" height="168" key="GridCell.Tab.0.right" timestamp="1604562255553">
+    <state width="1491" height="170" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1608638591596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="168" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604562255553" />
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom" timestamp="1598349853666">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.center" timestamp="1598349853666">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.left" timestamp="1598349853666">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.right" timestamp="1598349853666">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="294" y="498" width="1491" height="241" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598349853666" />
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.bottom" timestamp="1598232779526">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.center" timestamp="1598232779526">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.left" timestamp="1598232779526">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.right" timestamp="1598232779526">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="225" width="1462" height="242" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1598232779526" />
-    <state x="277" y="55" key="SettingsEditor" timestamp="1600927555086">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600927555086" />
-    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1598318853669">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1598318853669" />
-    <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1598349363397">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1598349363397" />
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608638591596" />
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604561396531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1604561396531" />
-    <state x="0" y="225" width="1476" height="307" key="dock-window-1" timestamp="1598232943450">
+    <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1608638877663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="225" width="1476" height="307" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1598232943450" />
-    <state x="-66" y="503" width="1476" height="307" key="dock-window-2" timestamp="1598232943450">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="-66" y="503" width="1476" height="307" key="dock-window-2/0.0.1536.824@0.0.1536.824" timestamp="1598232943450" />
-    <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1600928362996">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="463" y="10" width="609" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600928362996" />
+    <state x="463" y="10" width="609" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1608638877663" />
     <state width="555" height="500" key="javadoc.popup.new" timestamp="1604559483568">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
