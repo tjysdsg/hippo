@@ -3,11 +3,34 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Allow easier adjustment of GOP score error limit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +38,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9de8c66a7d23]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -79,13 +102,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Update profile page login/register code">
-      <created>1599119509993</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1599119509993</updated>
     </task>
     <task id="LOCAL-00016" summary="Update profile page login/register code">
       <created>1599119710042</created>
@@ -423,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604562563525</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Allow easier adjustment of GOP score error limit">
+      <created>1608640105699</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1608640105699</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -431,7 +454,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -442,7 +477,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update GOP page UI" />
     <MESSAGE value="Improve UI text" />
     <MESSAGE value="Add toast as feedback to users" />
     <MESSAGE value="Implement UI for pinyin and transcript" />
@@ -467,17 +501,18 @@
     <MESSAGE value="Swipe to delete lesson" />
     <MESSAGE value="Fix not being able to display Chinese in lesson name, close lesson editor automatically once a new lesson is successfully created" />
     <MESSAGE value="Fix appbar title not displaying Chinese correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix appbar title not displaying Chinese correctly" />
+    <MESSAGE value="Allow easier adjustment of GOP score error limit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow easier adjustment of GOP score error limit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="648" y="309" key="#Custom_Plugin_Repositories/0.0.1536.824@0.0.1536.824" timestamp="1608638575991" />
-    <state x="548" y="131" key="#HTTP_Proxy" timestamp="1608638569889">
+    <state x="548" y="131" key="#HTTP_Proxy" timestamp="1610005273502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="131" key="#HTTP_Proxy/0.0.1536.824@0.0.1536.824" timestamp="1608638569889" />
+    <state x="548" y="131" key="#HTTP_Proxy/0.0.1536.824@0.0.1536.824" timestamp="1610005273502" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608638711534">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -490,30 +525,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="83" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604562562193" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607514790631">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608640738408">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607514790631" />
-    <state width="1491" height="170" key="GridCell.Tab.0.bottom" timestamp="1608638810501">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608640738408" />
+    <state width="1491" height="170" key="GridCell.Tab.0.bottom" timestamp="1610005362454">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="170" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
-    <state width="1491" height="170" key="GridCell.Tab.0.center" timestamp="1608638810501">
+    <state width="1491" height="170" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610005362454" />
+    <state width="1491" height="170" key="GridCell.Tab.0.center" timestamp="1610005362454">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="170" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
-    <state width="1491" height="170" key="GridCell.Tab.0.left" timestamp="1608638810501">
+    <state width="1491" height="170" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610005362454" />
+    <state width="1491" height="170" key="GridCell.Tab.0.left" timestamp="1610005362454">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="170" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
-    <state width="1491" height="170" key="GridCell.Tab.0.right" timestamp="1608638810501">
+    <state width="1491" height="170" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610005362454" />
+    <state width="1491" height="170" key="GridCell.Tab.0.right" timestamp="1610005362454">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="170" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608638810501" />
-    <state x="277" y="55" key="SettingsEditor" timestamp="1608638591596">
+    <state width="1491" height="170" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610005362454" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1610005330958">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608638591596" />
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610005330958" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608640847181">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608640847181" />
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604561396531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -526,17 +565,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="555" height="500" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1604559483568" />
-    <state x="410" y="138" width="700" height="530" key="recent.locations.popup" timestamp="1600693021908">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="410" y="138" width="700" height="530" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1600693021908" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1600932343442">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600932343442" />
-    <state x="425" y="65" width="672" height="676" key="search.everywhere.popup" timestamp="1600068080887">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="65" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600068080887" />
   </component>
 </project>
