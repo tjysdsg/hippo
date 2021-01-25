@@ -13,17 +13,14 @@ import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
-const gopScoreLimit = -10;
-
-
 class TranscriptGridElementInfo {
   String c;
   String initial;
   String consonant;
   int tone;
-  double initialScore;
-  double consonantBaseScore;
-  double consonantToneScore;
+  bool initialCorr;
+  bool consonantBaseCorr;
+  bool consonantToneCorr;
 
   // String observedInitial;
   // String observedConsonant;
@@ -33,9 +30,9 @@ class TranscriptGridElementInfo {
     this.initial = ' ',
     this.consonant,
     this.tone = 0,
-    this.initialScore = 0,
-    this.consonantBaseScore = 0,
-    this.consonantToneScore = 0,
+    this.initialCorr = true,
+    this.consonantBaseCorr = true,
+    this.consonantToneCorr = true,
   });
 }
 
@@ -119,7 +116,7 @@ class _GopState extends State<Gop> {
   String _wavPath;
   bool _isRecording = false;
   var _pinyin = <String>[];
-  var _gop = <List<double>>[];
+  var _corretness = <List<bool>>[];
 
   _GopState() {
     _recorder.openAudioSession();
@@ -200,16 +197,16 @@ class _GopState extends State<Gop> {
         print(data);
         setState(() {
           _pinyin = List<String>.from(data[0]);
-          _gop = List<List>.from(data[1])
-              .map((List e) => (List<double>.from(e)))
+          _corretness = List<List>.from(data[1])
+              .map((List e) => (List<bool>.from(e)))
               .toList();
         });
       },
     );
   }
 
-  Color getColorFromGOP(double score) {
-    if (score > gopScoreLimit)
+  Color getPhoneColor(bool correct) {
+    if (correct)
       return Color.fromARGB(255, 0, 255, 0);
     else
       return Color.fromARGB(255, 255, 0, 0);
@@ -247,7 +244,7 @@ class _GopState extends State<Gop> {
             MyText(
               pinyinTone,
               fontSize: 20,
-              textColor: getColorFromGOP(info.consonantToneScore),
+              textColor: getPhoneColor(info.consonantToneCorr),
             ),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -259,12 +256,12 @@ class _GopState extends State<Gop> {
             MyText(
               info.initial ?? '',
               fontSize: 20,
-              textColor: getColorFromGOP(info.initialScore),
+              textColor: getPhoneColor(info.initialCorr),
             ),
             MyText(
               consonantBase,
               fontSize: 20,
-              textColor: getColorFromGOP(info.consonantBaseScore),
+              textColor: getPhoneColor(info.consonantBaseCorr),
             ),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -298,12 +295,12 @@ class _GopState extends State<Gop> {
       String pinyin = _pinyin[i];
       if (Pinyin.initials.contains(pinyin)) {
         info.initial = pinyin;
-        info.initialScore = _gop[i][0];
+        info.initialCorr = _corretness[i][0];
         prevElementComplete = false;
       } else {
         info.consonant = pinyin;
-        info.consonantBaseScore = _gop[i][0];
-        info.consonantToneScore = _gop[i][1];
+        info.consonantBaseCorr = _corretness[i][0];
+        info.consonantToneCorr = _corretness[i][1];
         elements.add(info);
         prevElementComplete = true;
       }
