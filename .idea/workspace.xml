@@ -28,9 +28,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Move the conversion from scores to correctness to server side">
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Refresh list of lessons after closing lesson editor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,13 +105,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Update profile page login/register code">
-      <created>1599124527680</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1599124527680</updated>
     </task>
     <task id="LOCAL-00020" summary="Update profile page login/register code">
       <created>1599124776768</created>
@@ -448,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611571463105</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Refresh list of lessons after closing lesson editor">
+      <created>1612421929608</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1612421929608</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -479,7 +480,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implement UI for pinyin and transcript" />
     <MESSAGE value="Improve pinyin+transcript UI" />
     <MESSAGE value="Allow users to cancel recording" />
     <MESSAGE value="Fix profile page not updating after successfully logged in" />
@@ -504,7 +504,8 @@
     <MESSAGE value="Allow easier adjustment of GOP score error limit" />
     <MESSAGE value="Update GOP error threshold, update kotlin version" />
     <MESSAGE value="Move the conversion from scores to correctness to server side" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move the conversion from scores to correctness to server side" />
+    <MESSAGE value="Refresh list of lessons after closing lesson editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refresh list of lessons after closing lesson editor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">

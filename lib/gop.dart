@@ -165,7 +165,6 @@ class _GopState extends State<Gop> {
     setState(() {
       _isRecording = false;
     });
-    okToast.dismissAllToast();
   }
 
   void uploadAudio() {
@@ -195,6 +194,7 @@ class _GopState extends State<Gop> {
         }
         List data = res['data'];
         print(data);
+        okToast.dismissAllToast();
         setState(() {
           _pinyin = List<String>.from(data[0]);
           _corretness = List<List>.from(data[1])
@@ -390,9 +390,11 @@ class _GopState extends State<Gop> {
       SizedBox(
         width: 100,
         child: RaisedButton(
+          /// stop/record button
           onPressed: () {
             if (_isRecording) {
               stopRecording();
+              okToast.showToast('Please wait...', duration: Duration(days: 1));
               uploadAudio();
             } else {
               startRecording();
