@@ -74,7 +74,6 @@ class _IndexState extends State<Index> {
       var lesson = _data[i];
       for (var j = 0; j < lesson.dialogs.length; ++j) {
         var dialog = lesson.dialogs[j];
-        // TODO: implement swipe to delete practices/sentences
         List<ListTile> sentenceList = dialog.sentences
             .map((sentence) => ListTile(
                   title: Text(toUnicodeString(sentence.transcript)),
@@ -130,11 +129,12 @@ class _IndexState extends State<Index> {
 
       /// button to add new lessons by teachers
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
+        onPressed: () async {
+          await Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => LessonEditor()),
           );
+          refreshData();
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
