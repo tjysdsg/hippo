@@ -78,18 +78,13 @@ class _LessonEditorState extends State<LessonEditor> {
               RaisedButton(
                 child: Text('Create'),
                 onPressed: () async {
-                  var dialogs = [
-                    models.Dialog(
-                        id: 0,
-                        sentences: _sentences
-                            .map((String e) =>
-                                models.Sentence(id: 0, transcript: e))
-                            .toList())
-                  ];
+                  List sentences = _sentences
+                      .map((String e) => models.Sentence(id: 0, transcript: e))
+                      .toList();
                   models.Lesson lesson = models.Lesson(
                     id: 0,
                     lessonName: _lessonName,
-                    dialogs: dialogs,
+                    sentences: sentences,
                   );
                   await createLesson(lesson);
                   debugPrint('Created a new lesson');

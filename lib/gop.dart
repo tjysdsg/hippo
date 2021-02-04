@@ -88,14 +88,12 @@ void tts({
 
 class Gop extends StatefulWidget {
   final String lessonName;
-  final int dialogIdx;
   final int sentenceId;
   final String transcript;
 
   Gop({
     Key key,
     @required this.lessonName,
-    @required this.dialogIdx,
     @required this.sentenceId,
     @required this.transcript,
   }) : super(key: key);
@@ -116,7 +114,7 @@ class _GopState extends State<Gop> {
   String _wavPath;
   bool _isRecording = false;
   var _pinyin = <String>[];
-  var _corretness = <List<bool>>[];
+  var _correctness = <List<bool>>[];
 
   _GopState() {
     _recorder.openAudioSession();
@@ -197,7 +195,7 @@ class _GopState extends State<Gop> {
         okToast.dismissAllToast();
         setState(() {
           _pinyin = List<String>.from(data[0]);
-          _corretness = List<List>.from(data[1])
+          _correctness = List<List>.from(data[1])
               .map((List e) => (List<bool>.from(e)))
               .toList();
         });
@@ -295,12 +293,12 @@ class _GopState extends State<Gop> {
       String pinyin = _pinyin[i];
       if (Pinyin.initials.contains(pinyin)) {
         info.initial = pinyin;
-        info.initialCorr = _corretness[i][0];
+        info.initialCorr = _correctness[i][0];
         prevElementComplete = false;
       } else {
         info.consonant = pinyin;
-        info.consonantBaseCorr = _corretness[i][0];
-        info.consonantToneCorr = _corretness[i][1];
+        info.consonantBaseCorr = _correctness[i][0];
+        info.consonantToneCorr = _correctness[i][1];
         elements.add(info);
         prevElementComplete = true;
       }
@@ -442,9 +440,9 @@ class _GopState extends State<Gop> {
     /// ==================================== ///
     return Scaffold(
       appBar: utils.buildAppBar(
-          utils.toUnicodeString(
-              'Lesson ${widget.lessonName}, Dialog ${widget.dialogIdx + 1}'),
-          context),
+        utils.toUnicodeString('${widget.lessonName}'),
+        context,
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20),
         child: Column(

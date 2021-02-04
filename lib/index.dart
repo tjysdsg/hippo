@@ -68,55 +68,49 @@ class _IndexState extends State<Index> {
   }
 
   Widget _getPracticeList() {
-    List<Dismissible> lessonDialogList = [];
+    List<Dismissible> lessonList = [];
 
     for (var i = 0; i < _data.length; ++i) {
       var lesson = _data[i];
-      for (var j = 0; j < lesson.dialogs.length; ++j) {
-        var dialog = lesson.dialogs[j];
-        List<ListTile> sentenceList = dialog.sentences
-            .map((sentence) => ListTile(
-                  title: Text(toUnicodeString(sentence.transcript)),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Gop(
-                                  lessonName: lesson.lessonName,
-                                  dialogIdx: j,
-                                  sentenceId: sentence.id,
-                                  transcript: sentence.transcript,
-                                )));
-                  },
-                ))
-            .toList();
+      List<ListTile> sentenceList = lesson.sentences
+          .map((sentence) => ListTile(
+                title: Text(toUnicodeString(sentence.transcript)),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Gop(
+                                lessonName: lesson.lessonName,
+                                sentenceId: sentence.id,
+                                transcript: sentence.transcript,
+                              )));
+                },
+              ))
+          .toList();
 
-        lessonDialogList.add(Dismissible(
-            key: Key(lesson.id.toString()),
-            onDismissed: (DismissDirection direction) {
-              /// swipe to delete lesson
-              deleteLesson(lesson.id);
-              setState(() {
-                _data.removeAt(i);
-              });
-              refreshData();
-            },
-            background: Container(color: Colors.red),
-            child: ExpansionTile(
-              title: Text(
-                toUnicodeString(
-                  'Lesson ${lesson.id}, ${lesson.lessonName}, Dialog ${dialog.id}',
-                ),
-              ),
-              children: sentenceList,
-            )));
-      }
+      lessonList.add(Dismissible(
+          key: Key(lesson.id.toString()),
+          onDismissed: (DismissDirection direction) async {
+            /// swipe to delete lesson
+            await deleteLesson(lesson.id);
+            setState(() {
+              _data.removeAt(i);
+            });
+            refreshData();
+          },
+          background: Container(color: Colors.red),
+          child: ExpansionTile(
+            title: Text(
+              toUnicodeString('${lesson.lessonName}'),
+            ),
+            children: sentenceList,
+          )));
     }
 
     return RefreshIndicator(
       onRefresh: refreshData,
       child: ListView(
-        children: lessonDialogList,
+        children: lessonList,
       ),
     );
   }
