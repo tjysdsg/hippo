@@ -29,15 +29,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Remove database dialog model">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9de8c66a7d23]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[UDN7N18314002775]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -104,13 +105,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Update GOP page, use auth information when uploading audio">
-      <created>1599359114613</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1599359114613</updated>
     </task>
     <task id="LOCAL-00023" summary="Update GOP page UI">
       <created>1599361137614</created>
@@ -448,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612426071173</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Remove database dialog model">
+      <created>1612426292915</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1612426292915</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,30 +536,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608640738408" />
-    <state width="1491" height="226" key="GridCell.Tab.0.bottom" timestamp="1612374418097">
+    <state width="1491" height="111" key="GridCell.Tab.0.bottom" timestamp="1612429489129">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612374418097" />
-    <state width="1491" height="226" key="GridCell.Tab.0.center" timestamp="1612374418097">
+    <state width="1491" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612429489129" />
+    <state width="1491" height="111" key="GridCell.Tab.0.center" timestamp="1612429489129">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612374418097" />
-    <state width="1491" height="226" key="GridCell.Tab.0.left" timestamp="1612374418097">
+    <state width="1491" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612429489129" />
+    <state width="1491" height="111" key="GridCell.Tab.0.left" timestamp="1612429489128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612374418097" />
-    <state width="1491" height="226" key="GridCell.Tab.0.right" timestamp="1612374418097">
+    <state width="1491" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612429489128" />
+    <state width="1491" height="111" key="GridCell.Tab.0.right" timestamp="1612429489129">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612374418097" />
+    <state width="1491" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612429489129" />
     <state x="261" y="0" key="SettingsEditor" timestamp="1611570242135">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="261" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611570242135" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611571472122">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1612426721561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611571472122" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1612426721561" />
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1611563796213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

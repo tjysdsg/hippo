@@ -411,6 +411,7 @@ class _GopState extends State<Gop> {
               width: 100,
               child: RaisedButton(
                 onPressed: () {
+                  okToast.dismissAllToast();
                   stopRecording();
                 },
                 child: Text('Cancel'),
