@@ -287,6 +287,7 @@ class _GopState extends State<Gop> {
     String transcript = utils.toUnicodeString(widget.transcript);
 
     /// fill in pinyin and scores for each character
+    int transIdx = 0;
     for (int i = 0; i < _pinyin.length; ++i) {
       if (prevElementComplete) info = TranscriptGridElementInfo();
 
@@ -299,6 +300,13 @@ class _GopState extends State<Gop> {
         info.consonant = pinyin;
         info.consonantBaseCorr = _correctness[i][0];
         info.consonantToneCorr = _correctness[i][1];
+
+        /// skip punctuations before adding a new element
+        while (Character.punctuations.contains(transcript[transIdx])) {
+          elements.add(TranscriptGridElementInfo(c: transcript[transIdx]));
+          ++transIdx;
+        }
+        info.c = transcript[transIdx++];
         elements.add(info);
         prevElementComplete = true;
       }
@@ -306,13 +314,14 @@ class _GopState extends State<Gop> {
 
     // TODO: get expected pinyin from server before retrieving GOP
     if (_pinyin.isEmpty) {
-      elements =
-          transcript.split('').map((e) => TranscriptGridElementInfo()).toList();
+      elements = transcript
+          .split('')
+          .map((e) => TranscriptGridElementInfo(c: e))
+          .toList();
     }
 
-    /// add to grid
+    /// build grid UI
     for (int i = 0; i < elements.length; ++i) {
-      elements[i].c = transcript[i];
       if ((i + 1) % _maxCharsPerRow == 0) {
         rowElements.add(getTranscriptGridElement(elements[i]));
         transcriptRows.add(Row(

@@ -587,3 +587,8 @@ class Pinyin {
     "üè": 1,
   };
 }
+
+class Character {
+  static final punctuations = "!\"#\$%&'()*+, -./:;<=>?@[\\]^_`{|}~"
+      "，。；‘“！？、：";
+}
