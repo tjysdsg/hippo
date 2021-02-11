@@ -28,9 +28,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix the bug that canceling recording did not dismiss 'recording' toast">
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix the bug that a punctuation in transcript makes the pinyin and transcript display mismatch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,13 +104,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Improve UI text">
-      <created>1599411088310</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1599411088310</updated>
     </task>
     <task id="LOCAL-00026" summary="Add toast as feedback to users">
       <created>1599412016914</created>
@@ -449,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612958528979</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Fix the bug that a punctuation in transcript makes the pinyin and transcript display mismatch">
+      <created>1613023953505</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1613023953505</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -480,7 +479,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Save login information to cache" />
     <MESSAGE value="Allow user to logout" />
     <MESSAGE value="Fix minor UI issues" />
     <MESSAGE value="Add tts button" />
@@ -505,7 +503,8 @@
     <MESSAGE value="Remove database dialog model" />
     <MESSAGE value="Fix the bug that canceling recording not dismissing 'recording' toast" />
     <MESSAGE value="Fix the bug that canceling recording did not dismiss 'recording' toast" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix the bug that canceling recording did not dismiss 'recording' toast" />
+    <MESSAGE value="Fix the bug that a punctuation in transcript makes the pinyin and transcript display mismatch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the bug that a punctuation in transcript makes the pinyin and transcript display mismatch" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">

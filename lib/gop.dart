@@ -22,9 +22,6 @@ class TranscriptGridElementInfo {
   bool consonantBaseCorr;
   bool consonantToneCorr;
 
-  // String observedInitial;
-  // String observedConsonant;
-
   TranscriptGridElementInfo({
     this.c = ' ',
     this.initial = ' ',
@@ -103,12 +100,10 @@ class Gop extends StatefulWidget {
 }
 
 class _GopState extends State<Gop> {
-  /// ====== configs ====== ///
   final int _maxCharsPerRow = 5;
 
-  /// ===================== ///
-
   final GlobalStateController _gsc = Get.find();
+
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
   FlutterSoundPlayer _player = FlutterSoundPlayer();
   String _wavPath;
@@ -210,7 +205,7 @@ class _GopState extends State<Gop> {
       return Color.fromARGB(255, 255, 0, 0);
   }
 
-  Widget getTranscriptGridElement(TranscriptGridElementInfo info) {
+  Widget buildTranscriptGridElement(TranscriptGridElementInfo info) {
     String initial = info.initial ?? '';
     String consonant = info.consonant ?? '';
     String pinyinTone = '';
@@ -277,8 +272,8 @@ class _GopState extends State<Gop> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
+  /// Build a widget containing a grid showing pinyin and transcripts
+  Widget buildTranscriptGrid() {
     var transcriptRows = <Widget>[];
     var rowElements = <Widget>[];
     var elements = <TranscriptGridElementInfo>[];
@@ -323,7 +318,7 @@ class _GopState extends State<Gop> {
     /// build grid UI
     for (int i = 0; i < elements.length; ++i) {
       if ((i + 1) % _maxCharsPerRow == 0) {
-        rowElements.add(getTranscriptGridElement(elements[i]));
+        rowElements.add(buildTranscriptGridElement(elements[i]));
         transcriptRows.add(Row(
           children: rowElements,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -331,7 +326,7 @@ class _GopState extends State<Gop> {
         ));
         rowElements = [];
       } else {
-        rowElements.add(getTranscriptGridElement(elements[i]));
+        rowElements.add(buildTranscriptGridElement(elements[i]));
       }
     }
     if (rowElements.isNotEmpty)
@@ -341,6 +336,7 @@ class _GopState extends State<Gop> {
         crossAxisAlignment: CrossAxisAlignment.center,
       ));
 
+    // TODO: move these buttons to buildActionButtons()
     /// tts button
     transcriptRows.add(RaisedButton(
       child: Text('hear'),
@@ -387,12 +383,15 @@ class _GopState extends State<Gop> {
                     )));
       },
     ));
-    var details = Column(
+    return Column(
       children: transcriptRows,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
     );
+  }
 
+  /// Build a widget containing main action buttons, e.g. record, replay, ...
+  Widget buildActionButtons() {
     List<Widget> btns = [
       SizedBox(
         width: 100,
@@ -446,8 +445,14 @@ class _GopState extends State<Gop> {
             child: Text('Replay'),
           )));
     }
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: btns,
+    );
+  }
 
-    /// ==================================== ///
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: utils.buildAppBar(
         utils.toUnicodeString('${widget.lessonName}'),
@@ -457,11 +462,8 @@ class _GopState extends State<Gop> {
         padding: EdgeInsets.symmetric(vertical: 20),
         child: Column(
           children: [
-            details,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: btns,
-            ),
+            buildTranscriptGrid(),
+            buildActionButtons(),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
         ),
