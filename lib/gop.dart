@@ -34,17 +34,17 @@ class TranscriptGridElementInfo {
 }
 
 void wsSendWav({
-  String host,
-  int port,
-  int sentenceId,
-  String username,
-  String token,
-  String wavPath,
+  @required String host,
+  @required int port,
+  @required int sentenceId,
+  @required String username,
+  @required String token,
+  @required String wavPath,
   String extName = 'wav',
   String lang = 'zh',
   int numChannels = 1,
   int sampleRate = 16000,
-  void callback(dynamic data),
+  @required void callback(dynamic data),
 }) async {
   debugPrint('Uploading audio using username=$username, token=$token');
   var meta = {
@@ -64,23 +64,42 @@ void wsSendWav({
   });
 }
 
-void tts({
-  String host,
-  int port,
-  String transcript,
-  void callback(Uint8List data),
+void downloadStdSpeech({
+  @required String host,
+  @required int port,
+  @required String path,
+  @required String transcript,
+  @required void callback(Uint8List data),
 }) async {
   debugPrint('Calling tts API for transcript=$transcript');
   var payload = {
     'transcript': transcript,
   };
-  var socket = await WebSocket.connect('ws://$host:$port/tts');
+  var socket = await WebSocket.connect('ws://$host:$port/$path');
   socket.add(json.encode(payload));
   socket.listen((dynamic msg) {
-    debugPrint('Received tts response');
-    callback(msg as Uint8List);
+    if (msg is String) {
+      debugPrint(msg);
+    } else {
+      callback(msg as Uint8List);
+    }
     socket.close();
   });
+}
+
+void playAudioFromBytes(FlutterSoundPlayer audioPlayer, Uint8List data) async {
+  /// save to wav file
+  String path = (await getExternalStorageDirectory()).path + '/tmp.wav';
+  var fileContent = await utils.raw2Wav(data);
+  File audioFile = File(path);
+  audioFile.writeAsBytesSync(fileContent);
+
+  /// player tts
+  audioPlayer.setSubscriptionDuration(Duration(milliseconds: 10));
+  await audioPlayer.startPlayer(
+    fromURI: audioFile.path,
+    codec: Codec.pcm16WAV,
+  );
 }
 
 class Gop extends StatefulWidget {
@@ -337,43 +356,42 @@ class _GopState extends State<Gop> {
       ));
 
     // TODO: move these buttons to buildActionButtons()
-    /// tts button
-    transcriptRows.add(RaisedButton(
-      child: Text('hear'),
+    /// standard speech button
+    var stdSpeechButton = RaisedButton(
+      child: Text('Hear'),
       onPressed: () {
-        /// get tts from server
-        tts(
+        downloadStdSpeech(
           host: ServerInfo.serverUrl,
           port: ServerInfo.serverPort,
+          path: "std-speech",
           transcript: transcript,
-          callback: (Uint8List data) async {
-            /// save tts result to wav file
-            debugPrint('Receiving tts audio data');
-            String path =
-                (await getExternalStorageDirectory()).path + '/tmp.wav';
-            var fileContent = await utils.raw2Wav(data);
-            File ttsFile = File(path);
-            ttsFile.writeAsBytesSync(fileContent);
-            debugPrint('tts results written to $path');
-
-            /// player tts
-            debugPrint('playing tts');
-            _player.setSubscriptionDuration(Duration(milliseconds: 10));
-            await _player.startPlayer(
-              fromURI: ttsFile.path,
-              codec: Codec.pcm16WAV,
-              whenFinished: () {
-                debugPrint('played tts');
-              },
-            );
+          callback: (Uint8List data) {
+            playAudioFromBytes(_player, data);
           },
         );
       },
-    ));
+    );
+
+    /// tts button
+    var ttsButton = RaisedButton(
+      child: Text('Text2Speech'),
+      onPressed: () {
+        /// get tts from server
+        downloadStdSpeech(
+          host: ServerInfo.serverUrl,
+          port: ServerInfo.serverPort,
+          path: "tts",
+          transcript: transcript,
+          callback: (Uint8List data) {
+            playAudioFromBytes(_player, data);
+          },
+        );
+      },
+    );
 
     /// feedback button
-    transcriptRows.add(RaisedButton(
-      child: Text('feedback?'),
+    var feedbackButton = RaisedButton(
+      child: Text('Feedback'),
       onPressed: () {
         Navigator.push(
             context,
@@ -382,7 +400,20 @@ class _GopState extends State<Gop> {
                       sentenceId: widget.sentenceId,
                     )));
       },
-    ));
+    );
+
+    /// msc button panel
+    Row mscButtonPanel = Row(
+      children: [
+        stdSpeechButton,
+        ttsButton,
+        feedbackButton,
+      ],
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+    );
+
+    transcriptRows.add(mscButtonPanel);
     return Column(
       children: transcriptRows,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
