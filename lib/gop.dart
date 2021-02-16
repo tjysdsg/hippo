@@ -414,6 +414,27 @@ class _GopState extends State<Gop> {
     );
 
     transcriptRows.add(mscButtonPanel);
+
+    /// help button
+    transcriptRows.add(RaisedButton(
+      child: Text('Help'),
+      onPressed: () {
+        createFeedback(
+          _gsc.username.toString(),
+          _gsc.loginToken.toString(),
+          "Need help",
+          widget.sentenceId,
+        );
+        okToast.showToast("Help is on the way", duration: Duration(seconds: 2));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => FeedbackPage(
+                  sentenceId: widget.sentenceId,
+                )));
+      },
+    ));
+
     return Column(
       children: transcriptRows,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
