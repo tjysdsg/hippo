@@ -2,24 +2,31 @@ import 'dart:convert';
 import 'package:hippo/main.dart';
 import 'package:hippo/models.dart' as models;
 import 'package:hippo/utils.dart';
+import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:http/http.dart' as http;
 import 'package:hippo/constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'error_code.dart';
 
-Future<void> createLesson(
-  // String username,
-  // String token,
+Future<ErrorCode> createLesson(
+  String username,
+  String token,
   models.Lesson lesson,
 ) async {
+  var payload = lesson.toDict(includeId: false);
+  payload['username'] = username;
+  payload['token'] = token;
   final http.Response res = await http.post(
     'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons',
-    body: json.encode(lesson.toDict(includeId: false)),
+    body: json.encode(payload),
   );
-  if (res.statusCode != 200) throw Exception("Failed to create lesson");
-  var data = json.decode(res.body);
-  if (data['status'] != 0)
-    throw Exception("Failed to create lesson: ${data['message']}");
+  if (res.statusCode != 200) {
+    throw Exception("Failed to create lesson");
+  }
+  Map data = json.decode(res.body);
+  ErrorCode ec = ErrorCode(errorType: data['status'], message: data['message']);
+  return ec;
 }
 
 class LessonEditor extends StatefulWidget {
@@ -34,6 +41,33 @@ class _LessonEditorState extends State<LessonEditor> {
 
   String _lessonName = '';
   List<String> _sentences = [];
+
+  Widget buildCreateButton() {
+    return RaisedButton(
+      child: Text('Create'),
+      onPressed: () async {
+        List sentences = _sentences
+            .map((String e) => models.Sentence(id: 0, transcript: e))
+            .toList();
+        models.Lesson lesson = models.Lesson(
+          id: 0,
+          lessonName: _lessonName,
+          sentences: sentences,
+        );
+        ErrorCode ec = await createLesson(
+          _gsc.username.toString(),
+          _gsc.loginToken.toString(),
+          lesson,
+        );
+        if (ec.isSuccess()) {
+          debugPrint('Created a new lesson');
+          Navigator.pop(context);
+        } else {
+          okToast.showToast('Failed to create a lesson: ${ec.toString()}');
+        }
+      },
+    );
+  }
 
   // TODO: edit existing lesson
   @override
@@ -73,25 +107,7 @@ class _LessonEditorState extends State<LessonEditor> {
     return Scaffold(
       appBar: buildAppBar('Create lesson', context),
       body: Column(
-        children: fields +
-            [
-              RaisedButton(
-                child: Text('Create'),
-                onPressed: () async {
-                  List sentences = _sentences
-                      .map((String e) => models.Sentence(id: 0, transcript: e))
-                      .toList();
-                  models.Lesson lesson = models.Lesson(
-                    id: 0,
-                    lessonName: _lessonName,
-                    sentences: sentences,
-                  );
-                  await createLesson(lesson);
-                  debugPrint('Created a new lesson');
-                  Navigator.pop(context);
-                },
-              )
-            ],
+        children: fields + [buildCreateButton()],
       ),
     );
   }
