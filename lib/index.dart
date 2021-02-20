@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'package:oktoast/oktoast.dart' as okToast;
+import 'package:get/get.dart';
+import 'package:hippo/error_code.dart';
 import 'package:hippo/gop.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hippo/lesson_editor.dart';
@@ -24,7 +27,8 @@ Future<List<Lesson>> getPracticeData() async {
   return ret;
 }
 
-Future<void> deleteLesson(int lessonId) async {
+Future<ErrorCode> deleteLesson(
+    String username, String token, int lessonId) async {
   // workaround since http.delete doesn't allow body
   var rq = Request(
     'DELETE',
@@ -32,14 +36,21 @@ Future<void> deleteLesson(int lessonId) async {
       'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons',
     ),
   );
-  rq.body = json.encode({'lesson_id': lessonId});
+  rq.body = json.encode({
+    'username': username,
+    'token': token,
+    'lesson_id': lessonId,
+  });
   http.Client client = http.Client();
   http.StreamedResponse res = await client.send(rq);
   client.close();
 
+  Map body = json.decode(await res.stream.bytesToString());
   if (res.statusCode != 200) {
     throw Exception("Failed to delete lesson id=$lessonId");
   }
+
+  return ErrorCode(errorType: body['status'], message: body['message']);
 }
 
 class Index extends StatefulWidget {
@@ -53,6 +64,7 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
+  final GlobalStateController _gsc = Get.find();
   List<Lesson> _data = [];
 
   _IndexState() {
@@ -88,11 +100,24 @@ class _IndexState extends State<Index> {
               ))
           .toList();
 
+      /// swipe to delete a lesson
       lessonList.add(Dismissible(
           key: Key(lesson.id.toString()),
+          confirmDismiss: (DismissDirection direction) async {
+            ErrorCode ec = await deleteLesson(
+              _gsc.username.toString(),
+              _gsc.loginToken.toString(),
+              lesson.id,
+            );
+
+            if (ec.isSuccess()) {
+              return true;
+            } else {
+              okToast.showToast('Failed to create a lesson: ${ec.toString()}');
+              return false;
+            }
+          },
           onDismissed: (DismissDirection direction) async {
-            /// swipe to delete lesson
-            await deleteLesson(lesson.id);
             setState(() {
               _data.removeAt(i);
             });

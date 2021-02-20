@@ -28,8 +28,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Authenticate lesson creation">
-      <change beforePath="$PROJECT_DIR$/lib/lesson_editor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lesson_editor.dart" afterDir="false" />
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Authenticate lesson deletion">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,20 +109,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Implement player TTS audio">
-      <created>1600691515172</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1600691515172</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Implement playing TTS audio">
-      <created>1600691534966</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1600691534966</updated>
     </task>
     <task id="LOCAL-00046" summary="Implement playing TTS audio">
       <created>1600693013695</created>
@@ -452,7 +439,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613799881867</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Authenticate lesson creation">
+      <created>1613799983827</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1613799983827</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Authenticate lesson deletion">
+      <created>1613800956232</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1613800956232</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -486,7 +487,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Swipe to delete lesson" />
     <MESSAGE value="Fix not being able to display Chinese in lesson name, close lesson editor automatically once a new lesson is successfully created" />
     <MESSAGE value="Fix appbar title not displaying Chinese correctly" />
     <MESSAGE value="Allow easier adjustment of GOP score error limit" />
@@ -511,7 +511,8 @@
     <MESSAGE value="Update xocde project file" />
     <MESSAGE value="Update TODO.md" />
     <MESSAGE value="Authenticate lesson creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Authenticate lesson creation" />
+    <MESSAGE value="Authenticate lesson deletion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Authenticate lesson deletion" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
@@ -542,22 +543,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608640738408" />
-    <state width="1491" height="226" key="GridCell.Tab.0.bottom" timestamp="1613792487281">
+    <state width="1491" height="190" key="GridCell.Tab.0.bottom" timestamp="1613800962335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1613792487281" />
-    <state width="1491" height="226" key="GridCell.Tab.0.center" timestamp="1613792487281">
+    <state width="1491" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1613800962335" />
+    <state width="1491" height="190" key="GridCell.Tab.0.center" timestamp="1613800962335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1613792487281" />
-    <state width="1491" height="226" key="GridCell.Tab.0.left" timestamp="1613792487281">
+    <state width="1491" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1613800962335" />
+    <state width="1491" height="190" key="GridCell.Tab.0.left" timestamp="1613800962335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1613792487281" />
-    <state width="1491" height="226" key="GridCell.Tab.0.right" timestamp="1613792487281">
+    <state width="1491" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1613800962335" />
+    <state width="1491" height="190" key="GridCell.Tab.0.right" timestamp="1613800962335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="226" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1613792487281" />
+    <state width="1491" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1613800962335" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1613788072239">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -566,10 +567,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="261" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1613790775504" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1613791398947">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1613800968364">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1613791398947" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1613800968364" />
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613797424249">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
