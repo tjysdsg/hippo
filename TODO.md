@@ -1,6 +1,2 @@
-- [ ] Add/delete practice by teacher
-- [x] Change colors used in pinyin display
-- [x] Fix issues playing standard speech
-- [x] Don't show observed pinyin
-- [x] Add feedback input
-- [ ] Show student practice completion status
+- Show analysis panel for teachers
+- Show student practice completion status
