@@ -215,21 +215,7 @@ packages:
       name: flutter_sound_lite
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
     source: hosted
-    version: "7.7.0+1"
-  flutter_sound_platform_interface:
-    dependency: transitive
-    description:
-      name: flutter_sound_platform_interface
-      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
-    source: hosted
-    version: "7.7.0+1"
-  flutter_sound_web:
-    dependency: transitive
-    description:
-      name: flutter_sound_web
-      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
-    source: hosted
-    version: "7.7.0+1"
+    version: "5.1.1"
   flutter_spinkit:
     dependency: transitive
     description:
@@ -239,11 +225,6 @@ packages:
     version: "4.1.2+1"
   flutter_test:
     dependency: "direct dev"
-    description: flutter
-    source: sdk
-    version: "0.0.0"
-  flutter_web_plugins:
-    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -344,7 +325,7 @@ packages:
       name: logger
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
     source: hosted
-    version: "0.9.4"
+    version: "0.7.0+2"
   logging:
     dependency: transitive
     description:
@@ -533,7 +514,7 @@ packages:
       name: recase
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
     source: hosted
-    version: "3.0.1"
+    version: "2.0.1"
   shelf:
     dependency: transitive
     description:

@@ -28,8 +28,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Set ios OTHER_LD_FLAGS in Podfile">
-      <change beforePath="$PROJECT_DIR$/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile" afterDir="false" />
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Update flutter_sound_lite version to LTS">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,27 +106,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Improve GOP UI">
-      <created>1599663928378</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1599663928378</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Improve GOP UI">
-      <created>1599664914015</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1599664914015</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Save login information to cache">
-      <created>1599718396689</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1599718396689</updated>
     </task>
     <task id="LOCAL-00039" summary="Save login information to cache">
       <created>1599718694886</created>
@@ -447,7 +429,28 @@
       <option name="project" value="LOCAL" />
       <updated>1613788897315</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Set ios OTHER_LD_FLAGS in Podfile">
+      <created>1613789248218</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1613789248218</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Update ios project">
+      <created>1613789263954</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1613789263954</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Update flutter_sound_lite version to LTS">
+      <created>1613790191200</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1613790191200</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -478,8 +481,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Allow teacher to view feedbacks" />
-    <MESSAGE value="Allow teachers to add lessons" />
     <MESSAGE value="Allow pulldown refreshing on index page" />
     <MESSAGE value="Update project config files" />
     <MESSAGE value="Allow users to replay their voice" />
@@ -503,7 +504,9 @@
     <MESSAGE value="Add Podfile to specify min ios version" />
     <MESSAGE value="Remove Podfile, set min ios version using plist file instead" />
     <MESSAGE value="Set ios OTHER_LD_FLAGS in Podfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set ios OTHER_LD_FLAGS in Podfile" />
+    <MESSAGE value="Update ios project" />
+    <MESSAGE value="Update flutter_sound_lite version to LTS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update flutter_sound_lite version to LTS" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
@@ -554,10 +557,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="261" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1613788164309" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1613788906950">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1613790204126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1613788906950" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1613790204126" />
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613788556407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
