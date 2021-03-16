@@ -99,16 +99,12 @@ class _UserFormState extends State<UserForm> {
     /// real name
     if (_loginType == LoginType.register) {
       inputFields.add(TextFormField(
-        decoration: InputDecoration(labelText: 'Real Name'),
+        decoration: InputDecoration(labelText: 'Real Name (Optional)'),
         keyboardType: TextInputType.name,
         onChanged: (String value) {
           setState(() {
             _realName = value;
           });
-        },
-        validator: (String value) {
-          if (value.isEmpty) return 'Real name is required';
-          return null;
         },
       ));
     }
