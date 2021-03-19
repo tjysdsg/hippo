@@ -28,9 +28,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix flutter web websocket errors">
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix hive db on mobile devices">
+      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/database.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,12 +79,18 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\repos\hippo\android\app\src\main\res" />
+      <recent name="D:\repos\hippo\android" />
+    </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="API test" type="FlutterTestConfigType" factoryName="Flutter Test">
@@ -110,13 +117,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Update project config files">
-      <created>1600930650282</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1600930650282</updated>
     </task>
     <task id="LOCAL-00058" summary="Update project config files">
       <created>1600930781008</created>
@@ -454,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616172642797</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Fix hive db on mobile devices">
+      <created>1616173156179</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1616173156179</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -498,7 +505,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix the bug that canceling recording did not dismiss 'recording' toast" />
     <MESSAGE value="Fix the bug that a punctuation in transcript makes the pinyin and transcript display mismatch" />
     <MESSAGE value="Refactor GOP page" />
     <MESSAGE value="Allow user to hear standard speech" />
@@ -523,7 +529,8 @@
     <MESSAGE value="Fix hive not initialized correctly on web platform" />
     <MESSAGE value="Update dependencies" />
     <MESSAGE value="Fix flutter web websocket errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix flutter web websocket errors" />
+    <MESSAGE value="Fix hive db on mobile devices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix hive db on mobile devices" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
@@ -542,6 +549,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="512" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1613750651650" />
+    <state x="349" y="167" key="AndroidCreateResourceDirectoryDialog" timestamp="1616173496751">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="167" key="AndroidCreateResourceDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1616173496751" />
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1616173653899">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1616173653899" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1616165990719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -550,30 +565,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608640738408" />
-    <state width="1514" height="446" key="GridCell.Tab.0.bottom" timestamp="1616172598379">
+    <state width="1514" height="194" key="GridCell.Tab.0.bottom" timestamp="1616173868314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="446" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616172598379" />
-    <state width="1514" height="446" key="GridCell.Tab.0.center" timestamp="1616172598378">
+    <state width="1514" height="194" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
+    <state width="1514" height="194" key="GridCell.Tab.0.center" timestamp="1616173868314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="446" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616172598378" />
-    <state width="1514" height="446" key="GridCell.Tab.0.left" timestamp="1616172598378">
+    <state width="1514" height="194" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
+    <state width="1514" height="194" key="GridCell.Tab.0.left" timestamp="1616173868314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="446" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616172598378" />
-    <state width="1514" height="446" key="GridCell.Tab.0.right" timestamp="1616172598379">
+    <state width="1514" height="194" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
+    <state width="1514" height="194" key="GridCell.Tab.0.right" timestamp="1616173868314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="446" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616172598379" />
+    <state width="1514" height="194" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1613788072239">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1613788072239" />
-    <state x="261" y="0" key="SettingsEditor" timestamp="1613790775504">
+    <state x="261" y="0" key="SettingsEditor" timestamp="1616173899224">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1613790775504" />
+    <state x="261" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616173899224" />
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog" timestamp="1615979188474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -582,10 +597,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616172650165" />
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1616171983822">
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1616173521720">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1616171983822" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1616173521720" />
     <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1616164972192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
