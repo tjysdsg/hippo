@@ -8,18 +8,19 @@ class KeyValueStore {
   Box _box;
 
   Future<void> init() async {
-    String path;
-    if (!kIsWeb) {
-      path = (await getExternalStorageDirectory()).path + '/database.hive';
-    }
-    Hive.initFlutter(path);
-
     try {
+      String path;
+      if (!kIsWeb) {
+        path = (await getExternalStorageDirectory()).path + '/database.hive';
+        Hive.init(path);
+      } else {
+        Hive.initFlutter();
+      }
+      debugPrint('Local cache database initialized at: $path');
       _box = await Hive.openBox('data');
     } catch (e) {
       debugPrint('Failed to initialize hive db: $e');
     }
-    debugPrint('Local cache database initialized at: $path');
   }
 
   void set(String key, dynamic value) {
