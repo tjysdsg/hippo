@@ -130,6 +130,10 @@ class _GopState extends State<Gop> {
   var _pinyin = <String>[];
   var _correctness = <List<bool>>[];
 
+  /// whether the evaluation of user recording is being calculated by server
+  /// if true, the record button is disable
+  bool _isCalculating = false;
+
   _GopState() {
     _recorder.openAudioSession();
     _player.openAudioSession();
@@ -145,6 +149,7 @@ class _GopState extends State<Gop> {
       _player.closeAudioSession();
       _player = null;
     }
+    okToast.dismissAllToast();
     super.dispose();
   }
 
@@ -188,6 +193,8 @@ class _GopState extends State<Gop> {
       wavPath: _wavPath,
       sentenceId: widget.sentenceId,
       callback: (dynamic msg) {
+        _isCalculating = false;
+
         if (!(msg is String)) {
           okToast.showToast('Does not understand results returned by server');
           return;
@@ -215,6 +222,7 @@ class _GopState extends State<Gop> {
         });
       },
     );
+    _isCalculating = true;
   }
 
   Color getPhoneColor(bool correct) {
@@ -300,6 +308,8 @@ class _GopState extends State<Gop> {
     TranscriptGridElementInfo info;
     String transcript = utils.toUnicodeString(widget.transcript);
 
+    // TODO: get expected pinyin from server before retrieving GOP
+
     /// fill in pinyin and scores for each character
     int transIdx = 0;
     for (int i = 0; i < _pinyin.length; ++i) {
@@ -326,7 +336,6 @@ class _GopState extends State<Gop> {
       }
     }
 
-    // TODO: get expected pinyin from server before retrieving GOP
     if (_pinyin.isEmpty) {
       elements = transcript
           .split('')
@@ -430,8 +439,8 @@ class _GopState extends State<Gop> {
             context,
             MaterialPageRoute(
                 builder: (context) => FeedbackPage(
-                  sentenceId: widget.sentenceId,
-                )));
+                      sentenceId: widget.sentenceId,
+                    )));
       },
     ));
 
@@ -449,15 +458,18 @@ class _GopState extends State<Gop> {
         width: 100,
         child: RaisedButton(
           /// stop/record button
-          onPressed: () {
-            if (_isRecording) {
-              stopRecording();
-              okToast.showToast('Please wait...', duration: Duration(days: 1));
-              uploadAudio();
-            } else {
-              startRecording();
-            }
-          },
+          onPressed: _isCalculating
+              ? null
+              : () {
+                  if (_isRecording) {
+                    stopRecording();
+                    okToast.showToast('Please wait...',
+                        duration: Duration(days: 1));
+                    uploadAudio();
+                  } else {
+                    startRecording();
+                  }
+                },
           child: Text(_isRecording ? 'Stop' : 'Record'),
         ),
       )
