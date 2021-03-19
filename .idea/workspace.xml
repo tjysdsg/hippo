@@ -23,16 +23,16 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:dev" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix ios build number">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Update project dependencies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/feedback.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/feedback.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,13 +111,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Allow teacher to view feedbacks">
-      <created>1600848932369</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1600848932369</updated>
     </task>
     <task id="LOCAL-00050" summary="Allow teacher to view feedbacks">
       <created>1600849268286</created>
@@ -455,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615981199395</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Update project dependencies">
+      <created>1616046182407</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1616046182407</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -482,7 +482,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
@@ -499,7 +499,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Allow easier adjustment of GOP score error limit" />
     <MESSAGE value="Update GOP error threshold, update kotlin version" />
     <MESSAGE value="Move the conversion from scores to correctness to server side" />
     <MESSAGE value="Refresh list of lessons after closing lesson editor" />
@@ -524,7 +523,8 @@
     <MESSAGE value="Authenticate lesson deletion" />
     <MESSAGE value="Change server URL to production server" />
     <MESSAGE value="Fix ios build number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix ios build number" />
+    <MESSAGE value="Update project dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update project dependencies" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
@@ -543,10 +543,6 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="512" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1613750651650" />
-    <state x="93" y="93" width="1350" height="638" key="AVDManager" timestamp="1607515137675">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1607515137675" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1615979188474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -555,22 +551,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608640738408" />
-    <state width="1514" height="190" key="GridCell.Tab.0.bottom" timestamp="1616045727820">
+    <state width="1514" height="190" key="GridCell.Tab.0.bottom" timestamp="1616164972562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616045727820" />
-    <state width="1514" height="190" key="GridCell.Tab.0.center" timestamp="1616045727820">
+    <state width="1514" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616164972562" />
+    <state width="1514" height="190" key="GridCell.Tab.0.center" timestamp="1616164972562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616045727820" />
-    <state width="1514" height="190" key="GridCell.Tab.0.left" timestamp="1616045727820">
+    <state width="1514" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616164972562" />
+    <state width="1514" height="190" key="GridCell.Tab.0.left" timestamp="1616164972561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616045727820" />
-    <state width="1514" height="190" key="GridCell.Tab.0.right" timestamp="1616045727820">
+    <state width="1514" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616164972561" />
+    <state width="1514" height="190" key="GridCell.Tab.0.right" timestamp="1616164972562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616045727820" />
+    <state width="1514" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616164972562" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1613788072239">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -583,25 +579,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog/0.0.1536.824@0.0.1536.824" timestamp="1615979188474" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1615981244708">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616046190337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615981244708" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616046190337" />
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1615981154226">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1615981154226" />
-    <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1615982392527">
+    <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1616164972192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="463" y="10" width="609" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1615982392527" />
+    <state x="463" y="10" width="609" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616164972192" />
     <state x="548" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615979173059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1615979173059" />
-    <state width="555" height="500" key="javadoc.popup.new" timestamp="1613022484201">
+    <state width="555" height="500" key="javadoc.popup.new" timestamp="1616165053972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="555" height="500" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1613022484201" />
+    <state width="555" height="500" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1616165053972" />
   </component>
 </project>

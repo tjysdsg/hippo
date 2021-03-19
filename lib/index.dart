@@ -12,6 +12,7 @@ import 'package:hippo/constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:hippo/models.dart';
 import 'package:http/http.dart';
+import 'package:oktoast/oktoast.dart';
 
 Future<List<Lesson>> getPracticeData() async {
   List<Lesson> ret;
@@ -76,6 +77,8 @@ class _IndexState extends State<Index> {
       setState(() {
         _data = value;
       });
+    }).catchError((e, stacktrace) {
+      showToast("Error encountered: $e");
     });
   }
 

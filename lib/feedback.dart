@@ -7,6 +7,7 @@ import 'package:hippo/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:hippo/constants.dart' as constants;
 import 'package:hippo/utils.dart' as utils;
+import 'package:oktoast/oktoast.dart';
 
 Future<void> createFeedback(
   String username,
@@ -69,7 +70,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
   String _feedbackContent = '';
 
   /// always be null or empty list for student account
-  List<FeedbackInfo> _feedbacks;
+  List<FeedbackInfo> _feedbacks = new List();
 
   Future<void> refreshData() async {
     getFeedback(_gsc.username.value, _gsc.loginToken.value, widget.sentenceId)
@@ -78,9 +79,8 @@ class _FeedbackPageState extends State<FeedbackPage> {
         _feedbacks = feedbacks;
       });
       debugPrint('Successfully retrieved all feedbacks');
-    }).catchError((e) {
-      // TODO: show error toast
-      debugPrint(e);
+    }).catchError((e, stacktrace) {
+      showToast("Error encountered: $e");
     });
   }
 
@@ -106,7 +106,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
       ),
     );
 
-    if (_feedbacks == null) {
+    if (_feedbacks.isEmpty) {
       /// prevent sending http request too frequently, requires manual refresh
       refreshData();
     }
