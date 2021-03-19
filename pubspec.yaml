@@ -6,30 +6,27 @@ publish_to: 'none'
 version: 1.0.1+4
 
 environment:
-  sdk: ">=2.9.0 <3.0.0"
+  sdk: ">=2.11.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.3
   http: ^0.12.2
-  flutter_sound_lite: ^5.0.0
-  path_provider: ^1.6.14
-  permission_handler: ^5.0.1+1
+  flutter_sound_lite: ^8.0.0+6
+  path_provider: ^2.0.0
+  permission_handler: ^6.1.1
   socket_io_client: ^0.9.11
   get: ^3.8.0
   oktoast: ^2.3.2
-  hive: ^1.4.4
-  hive_flutter: ^0.3.1
+  hive: ^2.0.0
+  hive_flutter: ^1.0.0
 
 dev_dependencies:
-  hive_generator: ^0.7.1
-  build_runner: ^1.10.1
+  hive_generator: ^1.0.0
+  build_runner: ^1.11.2
   flutter_test:
     sdk: flutter
-
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
 
 flutter:
   uses-material-design: true

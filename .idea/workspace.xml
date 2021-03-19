@@ -28,17 +28,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix record button not being re-enabled">
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable-v21/launch_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/values-night/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/icons/Icon-192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/icons/Icon-512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/manifest.json" afterDir="false" />
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Add web build">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/database.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +114,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Allow teachers to add lessons">
-      <created>1600918423022</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1600918423022</updated>
     </task>
     <task id="LOCAL-00054" summary="Allow teachers to add lessons">
       <created>1600918797441</created>
@@ -462,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616166163007</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Add web build">
+      <created>1616170112715</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1616170112716</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -506,7 +502,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Refresh list of lessons after closing lesson editor" />
     <MESSAGE value="Show toast when remote server is calculating" />
     <MESSAGE value="Remove database dialog model" />
     <MESSAGE value="Fix the bug that canceling recording not dismissing 'recording' toast" />
@@ -531,7 +526,8 @@
     <MESSAGE value="Update project dependencies" />
     <MESSAGE value="Show error as toasts in index and feedback pages" />
     <MESSAGE value="Disable record button when the server is evaluating the previous results" />
-    <option name="LAST_COMMIT_MESSAGE" value="Disable record button when the server is evaluating the previous results" />
+    <MESSAGE value="Add web build" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add web build" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
@@ -590,10 +586,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616166507650" />
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1615981154226">
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1616170608479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1615981154226" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1616170608479" />
     <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1616164972192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

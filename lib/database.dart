@@ -1,14 +1,24 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 
 class KeyValueStore {
   Box _box;
 
   Future<void> init() async {
-    String path = (await getExternalStorageDirectory()).path + '/database.hive';
-    Hive.init(path);
-    _box = await Hive.openBox('data');
+    String path;
+    if (!kIsWeb) {
+      path = (await getExternalStorageDirectory()).path + '/database.hive';
+    }
+    Hive.initFlutter(path);
+
+    try {
+      _box = await Hive.openBox('data');
+    } catch (e) {
+      debugPrint('Failed to initialize hive db: $e');
+    }
     debugPrint('Local cache database initialized at: $path');
   }
 
