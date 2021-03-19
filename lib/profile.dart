@@ -9,7 +9,8 @@ import 'package:hippo/constants.dart' as constants;
 Future<String> login(String username, String password) async {
   String token;
   http.Response res = await http.post(
-      'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/login',
+      Uri.parse(
+          'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/login'),
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -26,7 +27,8 @@ Future<String> register(
     String username, String password, String realName) async {
   String token;
   http.Response res = await http.post(
-      'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/register',
+      Uri.parse(
+          'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/register'),
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },

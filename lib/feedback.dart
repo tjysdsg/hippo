@@ -16,7 +16,8 @@ Future<void> createFeedback(
   int sentenceId,
 ) async {
   final http.Response res = await http.post(
-    'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/feedback',
+    Uri.parse(
+        'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/feedback'),
     body: json.encode({
       'username': username,
       'token': token,

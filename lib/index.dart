@@ -17,7 +17,8 @@ import 'package:oktoast/oktoast.dart';
 Future<List<Lesson>> getPracticeData() async {
   List<Lesson> ret;
   final http.Response res = await http.get(
-    'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons',
+    Uri.parse(
+        'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons'),
   );
   if (res.statusCode == 200) {
     List lessons = json.decode(res.body)['lessons'];

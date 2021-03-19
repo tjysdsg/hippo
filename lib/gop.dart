@@ -71,7 +71,7 @@ void downloadStdSpeech({
   @required String transcript,
   @required void callback(Uint8List data),
 }) async {
-  debugPrint('Calling tts API for transcript=$transcript');
+  debugPrint('Downloading standard speech for transcript=$transcript');
   var payload = {
     'transcript': transcript,
   };
