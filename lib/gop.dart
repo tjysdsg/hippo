@@ -193,7 +193,9 @@ class _GopState extends State<Gop> {
       wavPath: _wavPath,
       sentenceId: widget.sentenceId,
       callback: (dynamic msg) {
-        _isCalculating = false;
+        setState(() {
+          _isCalculating = false;
+        });
 
         if (!(msg is String)) {
           okToast.showToast('Does not understand results returned by server');
@@ -222,7 +224,9 @@ class _GopState extends State<Gop> {
         });
       },
     );
-    _isCalculating = true;
+    setState(() {
+      _isCalculating = true;
+    });
   }
 
   Color getPhoneColor(bool correct) {

@@ -28,8 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Show error as toasts in index and feedback pages">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Disable record button when the server is evaluating the previous results">
       <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
     </list>
@@ -111,13 +110,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Allow teachers to add lessons">
-      <created>1600917162262</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1600917162262</updated>
     </task>
     <task id="LOCAL-00053" summary="Allow teachers to add lessons">
       <created>1600918423022</created>
@@ -455,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616165603854</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Disable record button when the server is evaluating the previous results">
+      <created>1616166163007</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1616166163007</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -499,7 +498,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Move the conversion from scores to correctness to server side" />
     <MESSAGE value="Refresh list of lessons after closing lesson editor" />
     <MESSAGE value="Show toast when remote server is calculating" />
     <MESSAGE value="Remove database dialog model" />
@@ -524,7 +522,8 @@
     <MESSAGE value="Fix ios build number" />
     <MESSAGE value="Update project dependencies" />
     <MESSAGE value="Show error as toasts in index and feedback pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show error as toasts in index and feedback pages" />
+    <MESSAGE value="Disable record button when the server is evaluating the previous results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Disable record button when the server is evaluating the previous results" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
@@ -579,10 +578,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog/0.0.1536.824@0.0.1536.824" timestamp="1615979188474" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616165607880">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616166168017">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616165607880" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616166168017" />
     <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1615981154226">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
