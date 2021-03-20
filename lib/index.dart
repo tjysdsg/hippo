@@ -99,6 +99,7 @@ class _IndexState extends State<Index> {
                                 lessonName: lesson.lessonName,
                                 sentenceId: sentence.id,
                                 transcript: sentence.transcript,
+                                explanation: sentence.explanation,
                               )));
                 },
               ))

@@ -106,12 +106,14 @@ class Gop extends StatefulWidget {
   final String lessonName;
   final int sentenceId;
   final String transcript;
+  final String explanation;
 
   Gop({
     Key key,
     @required this.lessonName,
     @required this.sentenceId,
     @required this.transcript,
+    @required this.explanation,
   }) : super(key: key);
 
   @override
@@ -311,6 +313,7 @@ class _GopState extends State<Gop> {
     bool prevElementComplete = true;
     TranscriptGridElementInfo info;
     String transcript = utils.toUnicodeString(widget.transcript);
+    String explanation = utils.toUnicodeString(widget.explanation);
 
     // TODO: get expected pinyin from server before retrieving GOP
 
@@ -425,6 +428,9 @@ class _GopState extends State<Gop> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
     );
+
+    /// explanation
+    transcriptRows.add(MyText(explanation));
 
     transcriptRows.add(mscButtonPanel);
 

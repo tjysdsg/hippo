@@ -28,10 +28,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix hive db on mobile devices">
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+    <list default="true" id="95a9b82f-56a0-4c78-9a26-5f2ed897dd26" name="Default Changelist" comment="Fix android not allowing HTTP connections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gop.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -117,13 +118,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598187623031</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Update project config files">
-      <created>1600930781008</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1600930781008</updated>
     </task>
     <task id="LOCAL-00059" summary="Allow users to replay their voice">
       <created>1600932499752</created>
@@ -461,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616173156179</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Fix android not allowing HTTP connections">
+      <created>1616174130025</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1616174130025</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -505,7 +506,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix the bug that a punctuation in transcript makes the pinyin and transcript display mismatch" />
     <MESSAGE value="Refactor GOP page" />
     <MESSAGE value="Allow user to hear standard speech" />
     <MESSAGE value="Add quick help button" />
@@ -530,7 +530,8 @@
     <MESSAGE value="Update dependencies" />
     <MESSAGE value="Fix flutter web websocket errors" />
     <MESSAGE value="Fix hive db on mobile devices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix hive db on mobile devices" />
+    <MESSAGE value="Fix android not allowing HTTP connections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix android not allowing HTTP connections" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="309" key="#Custom_Plugin_Repositories" timestamp="1608638575991">
@@ -565,42 +566,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608640738408" />
-    <state width="1514" height="194" key="GridCell.Tab.0.bottom" timestamp="1616173868314">
+    <state width="1514" height="194" key="GridCell.Tab.0.bottom" timestamp="1616174130720">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="194" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
-    <state width="1514" height="194" key="GridCell.Tab.0.center" timestamp="1616173868314">
+    <state width="1514" height="194" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616174130720" />
+    <state width="1514" height="194" key="GridCell.Tab.0.center" timestamp="1616174130719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="194" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
-    <state width="1514" height="194" key="GridCell.Tab.0.left" timestamp="1616173868314">
+    <state width="1514" height="194" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616174130719" />
+    <state width="1514" height="194" key="GridCell.Tab.0.left" timestamp="1616174130719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="194" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
-    <state width="1514" height="194" key="GridCell.Tab.0.right" timestamp="1616173868314">
+    <state width="1514" height="194" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616174130719" />
+    <state width="1514" height="194" key="GridCell.Tab.0.right" timestamp="1616174130719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1514" height="194" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616173868314" />
+    <state width="1514" height="194" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616174130719" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1613788072239">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1613788072239" />
-    <state x="261" y="0" key="SettingsEditor" timestamp="1616173899224">
+    <state x="261" y="0" key="SettingsEditor" timestamp="1616174037342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616173899224" />
+    <state x="261" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616174037342" />
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog" timestamp="1615979188474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog/0.0.1536.824@0.0.1536.824" timestamp="1615979188474" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616172650165">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616174137497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616172650165" />
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1616173521720">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616174137497" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1616173946726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1616173521720" />
+    <state x="341" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1616173946726" />
     <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1616164972192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
