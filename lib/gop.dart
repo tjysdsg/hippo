@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:hippo/feedback.dart';
+import 'package:hippo/database.dart';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
@@ -89,7 +90,8 @@ void downloadStdSpeech({
 
 void playAudioFromBytes(FlutterSoundPlayer audioPlayer, Uint8List data) async {
   /// save to wav file
-  String path = (await getExternalStorageDirectory()).path + '/tmp.wav';
+  String path = await getStorageDir() + '/tmp.wav';
+
   var fileContent = await utils.raw2Wav(data);
   File audioFile = File(path);
   audioFile.writeAsBytesSync(fileContent);

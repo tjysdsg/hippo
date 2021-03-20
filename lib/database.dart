@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:universal_io/io.dart';
 
 class KeyValueStore {
   Box _box;
@@ -10,11 +11,16 @@ class KeyValueStore {
   Future<void> init() async {
     try {
       String path;
-      if (!kIsWeb) {
+      if (Platform.isAndroid) {
         path = (await getExternalStorageDirectory()).path + '/database.hive';
         Hive.init(path);
-      } else {
+      } else if (Platform.isIOS) {
+        path = (await getApplicationSupportDirectory()).path + '/database.hive';
+        Hive.init(path);
+      } else if (kIsWeb) {
         Hive.initFlutter();
+      } else {
+        throw Exception("Doesn't support this platform");
       }
       debugPrint('Local cache database initialized at: $path');
       _box = await Hive.openBox('data');
@@ -33,5 +39,15 @@ class KeyValueStore {
 
   void delete(String key) {
     _box.delete(key);
+  }
+}
+
+Future<String> getStorageDir() async {
+  if (Platform.isAndroid) {
+    return (await getExternalStorageDirectory()).path;
+  } else if (Platform.isIOS) {
+    return (await getApplicationSupportDirectory()).path;
+  } else {
+    throw Exception("Doesn't support storage on this platform");
   }
 }
