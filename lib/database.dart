@@ -12,10 +12,10 @@ class KeyValueStore {
     try {
       String path;
       if (Platform.isAndroid) {
-        path = (await getExternalStorageDirectory()).path + '/database.hive';
+        path = await getStorageDir() + '/database.hive';
         Hive.init(path);
       } else if (Platform.isIOS) {
-        path = (await getApplicationSupportDirectory()).path + '/database.hive';
+        path = await getStorageDir() + '/database.hive';
         Hive.init(path);
       } else if (kIsWeb) {
         Hive.initFlutter();
