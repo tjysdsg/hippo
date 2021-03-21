@@ -5,6 +5,7 @@ import 'package:hippo/database.dart';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
+import 'package:uuid/uuid.dart';
 import 'package:get/get.dart';
 import 'package:hippo/base.dart';
 import 'package:hippo/constants.dart';
@@ -13,6 +14,8 @@ import 'package:hippo/utils.dart' as utils;
 import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
+
+var uuid = Uuid();
 
 class TranscriptGridElementInfo {
   String c;
@@ -34,7 +37,7 @@ class TranscriptGridElementInfo {
   });
 }
 
-void wsSendWav({
+Future<void> wsSendWav({
   @required String host,
   @required int port,
   @required int sentenceId,
@@ -65,7 +68,7 @@ void wsSendWav({
   });
 }
 
-void downloadStdSpeech({
+Future<void> downloadStdSpeech({
   @required String host,
   @required int port,
   @required String path,
@@ -88,9 +91,9 @@ void downloadStdSpeech({
   });
 }
 
-void playAudioFromBytes(FlutterSoundPlayer audioPlayer, Uint8List data) async {
+Future<void> playAudioFromBytes(FlutterSoundPlayer audioPlayer, Uint8List data) async {
   /// save to wav file
-  String path = await getStorageDir() + '/tmp.wav';
+  String path = await getStorageDir() + '/tmp_${uuid.v4()}.wav';
 
   var fileContent = await utils.raw2Wav(data);
   File audioFile = File(path);
@@ -170,7 +173,9 @@ class _GopState extends State<Gop> {
       throw RecordingPermissionException("Microphone permission not granted");
 
     Directory tempDir = await getTemporaryDirectory();
-    _wavPath = '${tempDir.path}/tmp.wav';
+    _wavPath = '${tempDir.path}/tmp_${uuid.v4()}.wav';
+    debugPrint('Recorded audio is at $_wavPath');
+
     File outputFile = File(_wavPath);
     await _recorder.startRecorder(
         codec: Codec.pcm16WAV,
@@ -182,15 +187,15 @@ class _GopState extends State<Gop> {
     });
   }
 
-  void stopRecording() async {
+  Future<void> stopRecording() async {
     await _recorder.stopRecorder();
     setState(() {
       _isRecording = false;
     });
   }
 
-  void uploadAudio() {
-    wsSendWav(
+  Future<void> uploadAudio() async {
+    await wsSendWav(
       host: ServerInfo.serverUrl,
       port: ServerInfo.serverPort,
       username: _gsc.username.toString(),
@@ -384,14 +389,14 @@ class _GopState extends State<Gop> {
     /// standard speech button
     var stdSpeechButton = ElevatedButton(
       child: Text('Hear'),
-      onPressed: () {
-        downloadStdSpeech(
+      onPressed: () async {
+        await downloadStdSpeech(
           host: ServerInfo.serverUrl,
           port: ServerInfo.serverPort,
           path: "std-speech",
           transcript: transcript,
-          callback: (Uint8List data) {
-            playAudioFromBytes(_player, data);
+          callback: (Uint8List data) async {
+            await playAudioFromBytes(_player, data);
           },
         );
       },
@@ -400,15 +405,15 @@ class _GopState extends State<Gop> {
     /// tts button
     var ttsButton = ElevatedButton(
       child: Text('Text2Speech'),
-      onPressed: () {
+      onPressed: () async {
         /// get tts from server
-        downloadStdSpeech(
+        await downloadStdSpeech(
           host: ServerInfo.serverUrl,
           port: ServerInfo.serverPort,
           path: "tts",
           transcript: transcript,
-          callback: (Uint8List data) {
-            playAudioFromBytes(_player, data);
+          callback: (Uint8List data) async {
+            await playAudioFromBytes(_player, data);
           },
         );
       },
@@ -489,12 +494,12 @@ class _GopState extends State<Gop> {
           /// stop/record button
           onPressed: _isCalculating
               ? null
-              : () {
+              : () async {
                   if (_isRecording) {
-                    stopRecording();
+                    await stopRecording();
                     okToast.showToast('Please wait...',
                         duration: Duration(days: 1));
-                    uploadAudio();
+                    await uploadAudio();
                   } else {
                     startRecording();
                   }
@@ -511,9 +516,9 @@ class _GopState extends State<Gop> {
           SizedBox(
               width: 100,
               child: ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   okToast.dismissAllToast();
-                  stopRecording();
+                  await stopRecording();
                 },
                 child: Text('Cancel'),
               )));
