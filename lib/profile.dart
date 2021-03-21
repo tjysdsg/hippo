@@ -110,7 +110,7 @@ class _UserFormState extends State<UserForm> {
         },
       ));
     }
-    var submitBtn = RaisedButton(
+    var submitBtn = ElevatedButton(
       onPressed: () async {
         // validate input
         if (!_formKey.currentState.validate()) return;
@@ -178,11 +178,10 @@ class _UserFormState extends State<UserForm> {
   }
 
   Widget buildProfileDisplay(BuildContext context) {
-    // TODO: log out button, and user profile
     return Column(
       children: [
         Text('Logged in'),
-        RaisedButton(
+        ElevatedButton(
           child: Text('Logout'),
           onPressed: () {
             _gsc.clearUserInfo();
@@ -190,7 +189,7 @@ class _UserFormState extends State<UserForm> {
             _password = '';
             _realName = '';
 
-            /// FIXME: force redraw, since GetX doesn't seem to update
+            /// Force redraw, since GetX doesn't seem to update
             setState(() {});
           },
         )

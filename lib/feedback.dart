@@ -123,7 +123,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                   Column(
                     children: [
                       feedbackInput,
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('Submit'),
                         onPressed: () async {
                           await createFeedback(

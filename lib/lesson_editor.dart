@@ -44,11 +44,16 @@ class _LessonEditorState extends State<LessonEditor> {
   List<String> _sentences = [];
 
   Widget buildCreateButton() {
-    return RaisedButton(
+    return ElevatedButton(
       child: Text('Create'),
       onPressed: () async {
         List sentences = _sentences
-            .map((String e) => models.Sentence(id: 0, transcript: e))
+            // FIXME: creating lesson need explanation
+            .map((String e) => models.Sentence(
+                  id: 0,
+                  transcript: e,
+                  explanation: '',
+                ))
             .toList();
         models.Lesson lesson = models.Lesson(
           id: 0,

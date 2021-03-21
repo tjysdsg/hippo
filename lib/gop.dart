@@ -382,7 +382,7 @@ class _GopState extends State<Gop> {
 
     // TODO: move these buttons to buildActionButtons()
     /// standard speech button
-    var stdSpeechButton = RaisedButton(
+    var stdSpeechButton = ElevatedButton(
       child: Text('Hear'),
       onPressed: () {
         downloadStdSpeech(
@@ -398,7 +398,7 @@ class _GopState extends State<Gop> {
     );
 
     /// tts button
-    var ttsButton = RaisedButton(
+    var ttsButton = ElevatedButton(
       child: Text('Text2Speech'),
       onPressed: () {
         /// get tts from server
@@ -415,7 +415,7 @@ class _GopState extends State<Gop> {
     );
 
     /// feedback button
-    var feedbackButton = RaisedButton(
+    var feedbackButton = ElevatedButton(
       child: Text('Feedback'),
       onPressed: () {
         Navigator.push(
@@ -440,7 +440,7 @@ class _GopState extends State<Gop> {
     transcriptRows.add(mscButtonPanel);
 
     /// help button
-    transcriptRows.add(RaisedButton(
+    transcriptRows.add(ElevatedButton(
       child: Text('Help'),
       onPressed: () {
         createFeedback(
@@ -485,7 +485,7 @@ class _GopState extends State<Gop> {
     List<Widget> btns = [
       SizedBox(
         width: 100,
-        child: RaisedButton(
+        child: ElevatedButton(
           /// stop/record button
           onPressed: _isCalculating
               ? null
@@ -510,7 +510,7 @@ class _GopState extends State<Gop> {
           0,
           SizedBox(
               width: 100,
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   okToast.dismissAllToast();
                   stopRecording();
@@ -523,7 +523,7 @@ class _GopState extends State<Gop> {
     if (_wavPath != null && _wavPath != '') {
       btns.add(SizedBox(
           width: 100,
-          child: RaisedButton(
+          child: ElevatedButton(
             onPressed: () async {
               debugPrint('replaying user voice');
               _player.setSubscriptionDuration(Duration(milliseconds: 10));
