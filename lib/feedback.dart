@@ -71,7 +71,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
   String _feedbackContent = '';
 
   /// always be null or empty list for student account
-  List<FeedbackInfo> _feedbacks = new List();
+  var _feedbacks = <FeedbackInfo>[];
 
   Future<void> refreshData() async {
     getFeedback(_gsc.username.value, _gsc.loginToken.value, widget.sentenceId)
