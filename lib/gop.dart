@@ -133,6 +133,7 @@ class _GopState extends State<Gop> {
   bool _isRecording = false;
   var _pinyin = <String>[];
   var _correctness = <List<bool>>[];
+  var _observedTone = <String>[];
 
   /// whether the evaluation of user recording is being calculated by server
   /// if true, the record button is disable
@@ -224,6 +225,9 @@ class _GopState extends State<Gop> {
           _pinyin = List<String>.from(data[0]);
           _correctness = List<List>.from(data[1])
               .map((List e) => (List<bool>.from(e)))
+              .toList();
+          _observedTone = List<int>.from(data[2])
+              .map((int e) => Pinyin.toneNumberToString[e])
               .toList();
         });
       },
@@ -352,7 +356,7 @@ class _GopState extends State<Gop> {
           .toList();
     }
 
-    /// build grid UI
+    /// character grid
     for (int i = 0; i < elements.length; ++i) {
       if ((i + 1) % _maxCharsPerRow == 0) {
         rowElements.add(buildTranscriptGridElement(elements[i]));
@@ -372,6 +376,9 @@ class _GopState extends State<Gop> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
       ));
+
+    /// explanation
+    transcriptRows.add(MyText(explanation));
 
     // TODO: move these buttons to buildActionButtons()
     /// standard speech button
@@ -430,10 +437,6 @@ class _GopState extends State<Gop> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
     );
-
-    /// explanation
-    transcriptRows.add(MyText(explanation));
-
     transcriptRows.add(mscButtonPanel);
 
     /// help button
@@ -455,6 +458,20 @@ class _GopState extends State<Gop> {
                     )));
       },
     ));
+
+    _observedTone.removeWhere((String e) => e.isEmpty || e == ' ');
+    debugPrint(_observedTone.toString());
+
+    if (_observedTone.isNotEmpty) {
+      transcriptRows.add(MyText(
+        "Your tones:",
+        fontSize: 20,
+      ));
+      transcriptRows.add(MyText(
+        _observedTone.join(" "),
+        fontSize: 50,
+      ));
+    }
 
     return Column(
       children: transcriptRows,
