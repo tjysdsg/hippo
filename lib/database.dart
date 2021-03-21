@@ -46,7 +46,7 @@ Future<String> getStorageDir() async {
   if (Platform.isAndroid) {
     return (await getExternalStorageDirectory()).path;
   } else if (Platform.isIOS) {
-    return (await getApplicationSupportDirectory()).path;
+    return (await getApplicationDocumentsDirectory()).path;
   } else {
     throw Exception("Doesn't support storage on this platform");
   }
