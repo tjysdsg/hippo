@@ -91,7 +91,8 @@ Future<void> downloadStdSpeech({
   });
 }
 
-Future<void> playAudioFromBytes(FlutterSoundPlayer audioPlayer, Uint8List data) async {
+Future<void> playAudioFromBytes(
+    FlutterSoundPlayer audioPlayer, Uint8List data) async {
   /// save to wav file
   String path = await getStorageDir() + '/tmp_${uuid.v4()}.wav';
 
@@ -136,6 +137,7 @@ class _GopState extends State<Gop> {
   bool _isRecording = false;
   var _pinyin = <String>[];
   var _correctness = <List<bool>>[];
+  var _observedToneIdx = <int>[];
   var _observedTone = <String>[];
 
   /// whether the evaluation of user recording is being calculated by server
@@ -231,6 +233,7 @@ class _GopState extends State<Gop> {
           _correctness = List<List>.from(data[1])
               .map((List e) => (List<bool>.from(e)))
               .toList();
+          _observedToneIdx = List<int>.from(data[2]).toList();
           _observedTone = List<int>.from(data[2])
               .map((int e) => Pinyin.toneNumberToString[e])
               .toList();
@@ -341,7 +344,10 @@ class _GopState extends State<Gop> {
       } else {
         info.consonant = pinyin;
         info.consonantBaseCorr = _correctness[i][0];
-        info.consonantToneCorr = _correctness[i][1];
+        // info.consonantToneCorr = _correctness[i][1];
+        int expectedTone = Pinyin.consonant2Tone[pinyin];
+        int observedTone = _observedToneIdx[i];
+        info.consonantToneCorr = observedTone == expectedTone;
 
         /// skip punctuations before adding a new element
         while (Character.punctuations.contains(transcript[transIdx])) {
