@@ -1,5 +1,5 @@
 class ServerInfo {
-  static final String serverUrl = '121.196.127.61';
+  static final String serverUrl = '139.224.213.228';
   // static final String serverUrl = '127.0.0.1';
   static final int serverPort = 8080;
 }
