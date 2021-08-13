@@ -391,7 +391,6 @@ class _GopState extends State<Gop> {
     /// explanation
     transcriptRows.add(MyText(explanation));
 
-    // TODO: move these buttons to buildActionButtons()
     /// standard speech button
     var stdSpeechButton = ElevatedButton(
       child: Text('Hear'),
@@ -425,25 +424,11 @@ class _GopState extends State<Gop> {
       },
     );
 
-    /// feedback button
-    var feedbackButton = ElevatedButton(
-      child: Text('Feedback'),
-      onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => FeedbackPage(
-                      sentenceId: widget.sentenceId,
-                    )));
-      },
-    );
-
     /// msc button panel
     Row mscButtonPanel = Row(
       children: [
         stdSpeechButton,
         ttsButton,
-        feedbackButton,
       ],
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -460,13 +445,7 @@ class _GopState extends State<Gop> {
           "Need help",
           widget.sentenceId,
         );
-        okToast.showToast("Help is on the way", duration: Duration(seconds: 2));
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => FeedbackPage(
-                      sentenceId: widget.sentenceId,
-                    )));
+        okToast.showToast("Help message sent", duration: Duration(seconds: 2));
       },
     ));
 
