@@ -3,9 +3,24 @@ import 'package:hippo/index.dart';
 import 'package:get/get.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:hippo/database.dart';
+import 'dart:io' show Platform;
+import 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isAndroid || Platform.isIOS) {
+    await AppCenter.startAsync(
+      appSecretAndroid: '2ff93d0d-bf85-4b23-90da-5a1ba8a773ac',
+      appSecretIOS: '946b2162-e144-4567-872e-d5cb0cc2a6f1',
+      enableDistribute: true,
+      usePrivateDistributeTrack: true,
+    );
+  }
+
+  if (Platform.isAndroid) {
+    await AppCenter.configureDistributeDebugAsync(enabled: true);
+  }
+
   runApp(App(firstBuild: true));
 }
 

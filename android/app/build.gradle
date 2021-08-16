@@ -38,6 +38,17 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    // https://pub.dev/packages/flutter_appcenter_bundle
+    flavorDimensions "distribute"
+    productFlavors {
+        appCenter {
+            dimension "distribute"
+        }
+        googlePlay {
+            dimension "distribute"
+        }
+    }
+
     lintOptions {
         disable 'InvalidPackage'
     }
