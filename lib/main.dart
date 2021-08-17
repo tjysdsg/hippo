@@ -3,12 +3,14 @@ import 'package:hippo/index.dart';
 import 'package:get/get.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:hippo/database.dart';
-import 'dart:io' show Platform;
-import 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
+import 'package:universal_io/io.dart' show Platform;
+import 'platform_check.dart' show PlatformCheck;
+import 'package:hippo/appcenter_wrapper.dart'
+    if (PlatformCheck.isMobile) 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if (Platform.isAndroid || Platform.isIOS) {
+  if (PlatformCheck.isMobile) {
     await AppCenter.startAsync(
       appSecretAndroid: '2ff93d0d-bf85-4b23-90da-5a1ba8a773ac',
       appSecretIOS: '946b2162-e144-4567-872e-d5cb0cc2a6f1',
