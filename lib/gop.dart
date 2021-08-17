@@ -14,6 +14,7 @@ import 'package:hippo/utils.dart' as utils;
 import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
+import 'platform_check.dart' show PlatformCheck;
 
 var uuid = Uuid();
 
@@ -44,7 +45,7 @@ Future<void> wsSendWav({
   @required String username,
   @required String token,
   @required String wavPath,
-  String extName = 'wav',
+  @required String extName,
   String lang = 'zh',
   int numChannels = 1,
   int sampleRate = 16000,
@@ -134,6 +135,7 @@ class _GopState extends State<Gop> {
   FlutterSoundRecorder _recorder = FlutterSoundRecorder();
   FlutterSoundPlayer _player = FlutterSoundPlayer();
   String _wavPath;
+  String _audioFormat;
   bool _isRecording = false;
   var _pinyin = <String>[];
   var _correctness = <List<bool>>[];
@@ -170,17 +172,30 @@ class _GopState extends State<Gop> {
     }
 
     okToast.showToast('Recording', duration: Duration(days: 1));
-    PermissionStatus status = await Permission.microphone.request();
-    if (status != PermissionStatus.granted)
-      throw RecordingPermissionException("Microphone permission not granted");
+    if (PlatformCheck.isMobile) {
+      PermissionStatus status = await Permission.microphone.request();
+      if (status != PermissionStatus.granted)
+        throw RecordingPermissionException("Microphone permission not granted");
+    }
 
-    Directory tempDir = await getTemporaryDirectory();
-    _wavPath = '${tempDir.path}/tmp_${uuid.v4()}.wav';
+    /// Chrome/Firefox only support only Opus Webm
+    if (PlatformCheck.isWeb) {
+      _wavPath = 'tmp_${uuid.v4()}.webm';
+      _audioFormat = 'webm';
+    } else {
+      String tempDir = (await getTemporaryDirectory()).path;
+      _wavPath = '${tempDir}/tmp_${uuid.v4()}.wav';
+      _audioFormat = 'wav';
+    }
     debugPrint('Recorded audio is at $_wavPath');
 
     File outputFile = File(_wavPath);
+    Codec codec = Codec.pcm16WAV;
+    if (PlatformCheck.isWeb) {
+      codec = Codec.opusWebM;
+    }
     await _recorder.startRecorder(
-        codec: Codec.pcm16WAV,
+        codec: codec,
         sampleRate: 16000,
         numChannels: 1,
         toFile: outputFile.path);
@@ -203,6 +218,7 @@ class _GopState extends State<Gop> {
       username: _gsc.username.toString(),
       token: _gsc.loginToken.toString(),
       wavPath: _wavPath,
+      extName: _audioFormat,
       sentenceId: widget.sentenceId,
       callback: (dynamic msg) {
         setState(() {
