@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:logger/logger.dart';
 import 'dart:io';
 import 'package:hippo/feedback.dart';
 import 'package:hippo/database.dart';
@@ -132,8 +133,8 @@ class _GopState extends State<Gop> {
 
   final GlobalStateController _gsc = Get.find();
 
-  FlutterSoundRecorder _recorder = FlutterSoundRecorder();
-  FlutterSoundPlayer _player = FlutterSoundPlayer();
+  var _recorder = FlutterSoundRecorder(logLevel: Level.warning);
+  var _player = FlutterSoundPlayer(logLevel: Level.warning);
   String _wavPath;
   String _audioFormat;
   bool _isRecording = false;
