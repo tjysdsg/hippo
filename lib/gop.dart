@@ -73,12 +73,16 @@ Future<void> wsSendWav({
 Future<void> downloadStdSpeech({
   @required String host,
   @required int port,
+  @required String username,
+  @required String token,
   @required String path,
   @required String transcript,
   @required void callback(Uint8List data),
 }) async {
   debugPrint('Downloading standard speech for transcript=$transcript');
   var payload = {
+    'username': username,
+    'token': token,
     'transcript': transcript,
   };
   var socket = await WebSocket.connect('ws://$host:$port/$path');
@@ -415,6 +419,8 @@ class _GopState extends State<Gop> {
         await downloadStdSpeech(
           host: ServerInfo.serverUrl,
           port: ServerInfo.serverPort,
+          username: _gsc.username.toString(),
+          token: _gsc.loginToken.toString(),
           path: "std-speech",
           transcript: transcript,
           callback: (Uint8List data) async {
@@ -432,6 +438,8 @@ class _GopState extends State<Gop> {
         await downloadStdSpeech(
           host: ServerInfo.serverUrl,
           port: ServerInfo.serverPort,
+          username: _gsc.username.toString(),
+          token: _gsc.loginToken.toString(),
           path: "tts",
           transcript: transcript,
           callback: (Uint8List data) async {
