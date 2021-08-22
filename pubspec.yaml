@@ -3,7 +3,7 @@ description: Computer-assisted language learning for mandarin pronunciation.
 
 publish_to: 'none'
 
-version: 1.0.1+5
+version: 1.0.0
 
 environment:
   sdk: ">=2.11.0 <3.0.0"
