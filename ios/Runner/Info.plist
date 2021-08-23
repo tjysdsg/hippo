@@ -45,6 +45,12 @@
 	<string>Hippo does not need this permission</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Hippo does not need this permission</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Hippo does not need this permission</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hippo does not need this permission</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Hippo does not need this permission</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
