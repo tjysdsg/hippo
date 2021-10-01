@@ -65,9 +65,9 @@ class App extends StatelessWidget {
     var app = MaterialApp(
       title: 'CALL',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        accentColor: Colors.redAccent,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.lightBlue)
+            .copyWith(secondary: Colors.redAccent),
       ),
       home: Index(
         title: 'Practices',
