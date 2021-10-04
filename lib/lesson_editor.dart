@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import 'error_code.dart';
 
 Future<ErrorCode> createLesson(
+  String url,
   String username,
   String token,
   models.Lesson lesson,
@@ -18,8 +19,7 @@ Future<ErrorCode> createLesson(
   payload['username'] = username;
   payload['token'] = token;
   final http.Response res = await http.post(
-    Uri.parse(
-        'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons'),
+    Uri.parse('http://$url/lessons'),
     body: json.encode(payload),
   );
   if (res.statusCode != 200) {
@@ -61,6 +61,7 @@ class _LessonEditorState extends State<LessonEditor> {
           sentences: sentences,
         );
         ErrorCode ec = await createLesson(
+          _gsc.getServerUrl(),
           _gsc.username.toString(),
           _gsc.loginToken.toString(),
           lesson,

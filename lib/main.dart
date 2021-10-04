@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hippo/index.dart';
 import 'package:get/get.dart';
+import 'package:hippo/constants.dart' as constants;
 import 'package:oktoast/oktoast.dart';
 import 'package:hippo/database.dart';
 import 'package:universal_io/io.dart' show Platform;
@@ -29,6 +30,7 @@ void main() async {
 class GlobalStateController extends GetxController {
   var loginToken = ''.obs;
   var username = ''.obs;
+  var onCampus = false.obs;
   KeyValueStore _cache;
 
   void init() async {
@@ -53,7 +55,23 @@ class GlobalStateController extends GetxController {
   }
 
   setIsOnCampus(bool val) {
-    _cache.set('isOnCampus', val);
+    onCampus = RxBool(val);
+  }
+
+  isOnCampus() {
+    return onCampus.value;
+  }
+
+  getServerUrl() {
+    String ret = constants.ServerInfo.getServerUrl(isOnCampus());
+    debugPrint("Using server url: $ret");
+    return ret;
+  }
+
+  getServerIp() {
+    String ret = constants.ServerInfo.getServerIp(isOnCampus());
+    debugPrint("Using server IP: $ret");
+    return ret;
   }
 }
 

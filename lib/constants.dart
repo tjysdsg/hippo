@@ -1,8 +1,17 @@
 class ServerInfo {
-  static final String serverUrl = '180.208.59.153';
+  static final String extranetUrl = '180.208.59.153';
+  static final String intranetUrl = '10.200.14.99';
 
   // static final String serverUrl = '127.0.0.1';
   static final int serverPort = 40001;
+
+  static String getServerUrl(bool isOnCampus) {
+    return "${isOnCampus ? intranetUrl : extranetUrl}:$serverPort";
+  }
+
+  static String getServerIp(bool isOnCampus) {
+    return isOnCampus ? intranetUrl : extranetUrl;
+  }
 }
 
 class Pinyin {

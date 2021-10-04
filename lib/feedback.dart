@@ -10,14 +10,14 @@ import 'package:hippo/utils.dart' as utils;
 import 'package:oktoast/oktoast.dart';
 
 Future<void> createFeedback(
+  String url,
   String username,
   String token,
   String content,
   int sentenceId,
 ) async {
   final http.Response res = await http.post(
-    Uri.parse(
-        'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/feedback'),
+    Uri.parse('http://$url/feedback'),
     body: json.encode({
       'username': username,
       'token': token,
@@ -36,12 +36,13 @@ class FeedbackInfo {
 }
 
 Future<List<FeedbackInfo>> getFeedback(
+  String url,
   String username,
   String token,
   int sentenceId,
 ) async {
   var uri = Uri.http(
-    '${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}',
+    url,
     '/feedback',
     {
       'sentence_id': sentenceId.toString(),
@@ -74,7 +75,8 @@ class _FeedbackPageState extends State<FeedbackPage> {
   var _feedbacks = <FeedbackInfo>[];
 
   Future<void> refreshData() async {
-    getFeedback(_gsc.username.value, _gsc.loginToken.value, widget.sentenceId)
+    getFeedback(_gsc.getServerUrl(), _gsc.username.value, _gsc.loginToken.value,
+            widget.sentenceId)
         .then((List<FeedbackInfo> feedbacks) {
       setState(() {
         _feedbacks = feedbacks;
@@ -127,6 +129,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                         child: Text('Submit'),
                         onPressed: () async {
                           await createFeedback(
+                            _gsc.getServerUrl(),
                             _gsc.username.value,
                             _gsc.loginToken.value,
                             _feedbackContent,

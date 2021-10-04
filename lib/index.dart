@@ -14,12 +14,9 @@ import 'package:hippo/models.dart';
 import 'package:http/http.dart';
 import 'package:oktoast/oktoast.dart';
 
-Future<List<Lesson>> getPracticeData() async {
+Future<List<Lesson>> getPracticeData(String url) async {
   List<Lesson> ret;
-  final http.Response res = await http.get(
-    Uri.parse(
-        'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons'),
-  );
+  final http.Response res = await http.get(Uri.parse('http://$url/lessons'));
   if (res.statusCode == 200) {
     List lessons = json.decode(res.body)['lessons'];
     ret = lessons.map((e) => Lesson.fromJson(e)).toList();
@@ -30,13 +27,11 @@ Future<List<Lesson>> getPracticeData() async {
 }
 
 Future<ErrorCode> deleteLesson(
-    String username, String token, int lessonId) async {
+    String url, String username, String token, int lessonId) async {
   // workaround since http.delete doesn't allow body
   var rq = Request(
     'DELETE',
-    Uri.parse(
-      'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/lessons',
-    ),
+    Uri.parse('http://$url/lessons'),
   );
   rq.body = json.encode({
     'username': username,
@@ -74,7 +69,7 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> refreshData() async {
-    getPracticeData().then((value) {
+    getPracticeData(_gsc.getServerUrl()).then((value) {
       setState(() {
         _data = value;
       });
@@ -110,6 +105,7 @@ class _IndexState extends State<Index> {
           key: Key(lesson.id.toString()),
           confirmDismiss: (DismissDirection direction) async {
             ErrorCode ec = await deleteLesson(
+              _gsc.getServerUrl(),
               _gsc.username.toString(),
               _gsc.loginToken.toString(),
               lesson.id,

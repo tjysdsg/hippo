@@ -6,11 +6,9 @@ import 'package:oktoast/oktoast.dart' as okToast;
 import 'dart:convert';
 import 'package:hippo/constants.dart' as constants;
 
-Future<String> login(String username, String password) async {
+Future<String> login(String url, String username, String password) async {
   String token;
-  http.Response res = await http.post(
-      Uri.parse(
-          'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/login'),
+  http.Response res = await http.post(Uri.parse('http://$url/login'),
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -24,11 +22,9 @@ Future<String> login(String username, String password) async {
 }
 
 Future<String> register(
-    String username, String password, String realName) async {
+    String url, String username, String password, String realName) async {
   String token;
-  http.Response res = await http.post(
-      Uri.parse(
-          'http://${constants.ServerInfo.serverUrl}:${constants.ServerInfo.serverPort}/register'),
+  http.Response res = await http.post(Uri.parse('http://$url/register'),
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -119,9 +115,10 @@ class _UserFormState extends State<UserForm> {
         String token;
         try {
           if (_loginType == LoginType.login) {
-            token = await login(_username, _password);
+            token = await login(_gsc.getServerUrl(), _username, _password);
           } else {
-            token = await register(_username, _password, _realName);
+            token = await register(
+                _gsc.getServerUrl(), _username, _password, _realName);
           }
         } catch (e) {
           okToast.showToast('Cannot login: $e');

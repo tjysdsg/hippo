@@ -218,7 +218,7 @@ class _GopState extends State<Gop> {
 
   Future<void> uploadAudio() async {
     await wsSendWav(
-      host: ServerInfo.serverUrl,
+      host: _gsc.getServerIp(),
       port: ServerInfo.serverPort,
       username: _gsc.username.toString(),
       token: _gsc.loginToken.toString(),
@@ -417,7 +417,7 @@ class _GopState extends State<Gop> {
       child: Text('Hear'),
       onPressed: () async {
         await downloadStdSpeech(
-          host: ServerInfo.serverUrl,
+          host: _gsc.getServerIp(),
           port: ServerInfo.serverPort,
           username: _gsc.username.toString(),
           token: _gsc.loginToken.toString(),
@@ -436,7 +436,7 @@ class _GopState extends State<Gop> {
       onPressed: () async {
         /// get tts from server
         await downloadStdSpeech(
-          host: ServerInfo.serverUrl,
+          host: _gsc.getServerIp(),
           port: ServerInfo.serverPort,
           username: _gsc.username.toString(),
           token: _gsc.loginToken.toString(),
@@ -465,6 +465,7 @@ class _GopState extends State<Gop> {
       child: Text('Help'),
       onPressed: () {
         createFeedback(
+          _gsc.getServerUrl(),
           _gsc.username.toString(),
           _gsc.loginToken.toString(),
           "Need help",
