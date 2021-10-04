@@ -113,7 +113,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
     }
 
     return Scaffold(
-      appBar: utils.buildAppBar('Feedback', context),
+      appBar: utils.MyAppBar(title: 'Feedback'),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: RefreshIndicator(

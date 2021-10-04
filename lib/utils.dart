@@ -1,18 +1,59 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:hippo/base.dart';
 import 'package:hippo/profile.dart';
+import 'package:hippo/main.dart';
+import 'package:get/get.dart';
 
-Widget buildAppBar(String title, BuildContext context) {
-  return AppBar(title: Text(title), actions: [
-    MaterialButton(
-      onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Profile()));
-      },
-      child: Text('Profile'),
-    )
-  ]);
+class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
+  final String title;
+
+  MyAppBar({this.title});
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+
+  @override
+  _MyAppBar createState() => _MyAppBar();
+}
+
+class _MyAppBar extends State<MyAppBar> {
+  bool isOn = true;
+  bool isOnCampus = true;
+  final GlobalStateController _gsc = Get.find();
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(widget.title),
+      actions: [
+        /// allow users to specify whether if they're on campus
+        Row(
+          children: [
+            MyText("On Campus?"),
+            Switch(
+              value: isOnCampus,
+              onChanged: (val) {
+                setState(() {
+                  isOnCampus = val;
+                });
+                debugPrint("isOnCampus set to $val");
+                _gsc.setIsOnCampus(val);
+              },
+            ),
+          ],
+        ),
+        MaterialButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Profile()));
+          },
+          child: Text('Profile'),
+        ),
+      ],
+    );
+  }
 }
 
 String toUnicodeString(String s) {

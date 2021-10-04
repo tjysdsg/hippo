@@ -148,7 +148,7 @@ class _IndexState extends State<Index> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(widget.title, context),
+      appBar: MyAppBar(title: widget.title),
       body: _getPracticeList(),
 
       /// button to add new lessons by teachers

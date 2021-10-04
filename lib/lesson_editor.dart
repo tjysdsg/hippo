@@ -111,7 +111,7 @@ class _LessonEditorState extends State<LessonEditor> {
     }
 
     return Scaffold(
-      appBar: buildAppBar('Create lesson', context),
+      appBar: MyAppBar(title: 'Create lesson'),
       body: Column(
         children: fields + [buildCreateButton()],
       ),

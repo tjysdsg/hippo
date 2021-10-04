@@ -562,10 +562,8 @@ class _GopState extends State<Gop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: utils.buildAppBar(
-        utils.toUnicodeString('${widget.lessonName}'),
-        context,
-      ),
+      appBar:
+          utils.MyAppBar(title: utils.toUnicodeString('${widget.lessonName}')),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20),
         child: Column(

@@ -51,6 +51,10 @@ class GlobalStateController extends GetxController {
     _cache.delete('loginToken');
     _cache.delete('username');
   }
+
+  setIsOnCampus(bool val) {
+    _cache.set('isOnCampus', val);
+  }
 }
 
 class App extends StatelessWidget {
