@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:hippo/main.dart';
+import 'package:hippo/base.dart';
 import 'package:hippo/models.dart' as models;
 import 'package:hippo/utils.dart';
 import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:http/http.dart' as http;
-import 'package:hippo/constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'error_code.dart';
@@ -37,9 +37,7 @@ class LessonEditor extends StatefulWidget {
   _LessonEditorState createState() => _LessonEditorState();
 }
 
-class _LessonEditorState extends State<LessonEditor> {
-  final GlobalStateController _gsc = Get.find();
-
+class _LessonEditorState extends PageState<LessonEditor> {
   String _lessonName = '';
   List<String> _sentences = [];
 
@@ -61,9 +59,9 @@ class _LessonEditorState extends State<LessonEditor> {
           sentences: sentences,
         );
         ErrorCode ec = await createLesson(
-          _gsc.getServerUrl(),
-          _gsc.username.toString(),
-          _gsc.loginToken.toString(),
+          gsc.getServerUrl(),
+          gsc.username.toString(),
+          gsc.loginToken.toString(),
           lesson,
         );
         if (ec.isSuccess()) {
@@ -78,7 +76,7 @@ class _LessonEditorState extends State<LessonEditor> {
 
   // TODO: edit existing lesson
   @override
-  Widget build(BuildContext context) {
+  Widget buildPage(BuildContext context) {
     List<Widget> fields = [
       /// lesson name
       TextField(

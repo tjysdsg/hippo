@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hippo/main.dart';
 
 class MyText extends StatefulWidget {
   final String text;
@@ -26,5 +28,17 @@ class _MyTextState extends State<MyText> {
         color: widget.textColor,
       ),
     );
+  }
+}
+
+abstract class PageState<T extends StatefulWidget> extends State<T> {
+  final GlobalStateController gsc = Get.find();
+
+  Widget buildPage(BuildContext context);
+
+  @override
+  Widget build(BuildContext context) {
+    gsc.setCurrentActiveWidgetState(this);
+    return buildPage(context);
   }
 }

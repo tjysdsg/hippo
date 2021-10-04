@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:hippo/base.dart';
 import 'package:hippo/main.dart';
 import 'package:http/http.dart' as http;
-import 'package:hippo/constants.dart' as constants;
 import 'package:hippo/utils.dart' as utils;
 import 'package:oktoast/oktoast.dart';
 
@@ -67,15 +66,14 @@ class FeedbackPage extends StatefulWidget {
   _FeedbackPageState createState() => _FeedbackPageState();
 }
 
-class _FeedbackPageState extends State<FeedbackPage> {
-  final GlobalStateController _gsc = Get.find();
+class _FeedbackPageState extends PageState<FeedbackPage> {
   String _feedbackContent = '';
 
   /// always be null or empty list for student account
   var _feedbacks = <FeedbackInfo>[];
 
   Future<void> refreshData() async {
-    getFeedback(_gsc.getServerUrl(), _gsc.username.value, _gsc.loginToken.value,
+    getFeedback(gsc.getServerUrl(), gsc.username.value, gsc.loginToken.value,
             widget.sentenceId)
         .then((List<FeedbackInfo> feedbacks) {
       setState(() {
@@ -88,7 +86,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildPage(BuildContext context) {
     var feedbackInput = TextField(
       keyboardType: TextInputType.multiline,
       maxLines: null,
@@ -129,9 +127,9 @@ class _FeedbackPageState extends State<FeedbackPage> {
                         child: Text('Submit'),
                         onPressed: () async {
                           await createFeedback(
-                            _gsc.getServerUrl(),
-                            _gsc.username.value,
-                            _gsc.loginToken.value,
+                            gsc.getServerUrl(),
+                            gsc.username.value,
+                            gsc.loginToken.value,
                             _feedbackContent,
                             widget.sentenceId,
                           );

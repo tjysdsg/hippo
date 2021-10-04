@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:oktoast/oktoast.dart' as okToast;
-import 'package:get/get.dart';
 import 'package:hippo/error_code.dart';
 import 'package:hippo/gop.dart';
 import 'package:flutter/foundation.dart';
@@ -8,7 +7,7 @@ import 'package:hippo/lesson_editor.dart';
 import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart';
 import 'package:http/http.dart' as http;
-import 'package:hippo/constants.dart' as constants;
+import 'package:hippo/base.dart';
 import 'package:flutter/material.dart';
 import 'package:hippo/models.dart';
 import 'package:http/http.dart';
@@ -60,8 +59,7 @@ class Index extends StatefulWidget {
   _IndexState createState() => _IndexState();
 }
 
-class _IndexState extends State<Index> {
-  final GlobalStateController _gsc = Get.find();
+class _IndexState extends PageState<Index> {
   List<Lesson> _data = [];
 
   _IndexState() {
@@ -69,7 +67,7 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> refreshData() async {
-    getPracticeData(_gsc.getServerUrl()).then((value) {
+    getPracticeData(gsc.getServerUrl()).then((value) {
       setState(() {
         _data = value;
       });
@@ -105,9 +103,9 @@ class _IndexState extends State<Index> {
           key: Key(lesson.id.toString()),
           confirmDismiss: (DismissDirection direction) async {
             ErrorCode ec = await deleteLesson(
-              _gsc.getServerUrl(),
-              _gsc.username.toString(),
-              _gsc.loginToken.toString(),
+              gsc.getServerUrl(),
+              gsc.username.toString(),
+              gsc.loginToken.toString(),
               lesson.id,
             );
 
@@ -142,7 +140,8 @@ class _IndexState extends State<Index> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildPage(BuildContext context) {
+    refreshData();
     return Scaffold(
       appBar: MyAppBar(title: widget.title),
       body: _getPracticeList(),

@@ -7,10 +7,8 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'package:uuid/uuid.dart';
-import 'package:get/get.dart';
 import 'package:hippo/base.dart';
 import 'package:hippo/constants.dart';
-import 'package:hippo/main.dart';
 import 'package:hippo/utils.dart' as utils;
 import 'package:oktoast/oktoast.dart' as okToast;
 import 'package:permission_handler/permission_handler.dart';
@@ -132,10 +130,8 @@ class Gop extends StatefulWidget {
   _GopState createState() => _GopState();
 }
 
-class _GopState extends State<Gop> {
+class _GopState extends PageState<Gop> {
   final int _maxCharsPerRow = 5;
-
-  final GlobalStateController _gsc = Get.find();
 
   var _recorder = FlutterSoundRecorder(logLevel: Level.warning);
   var _player = FlutterSoundPlayer(logLevel: Level.warning);
@@ -171,7 +167,7 @@ class _GopState extends State<Gop> {
   }
 
   void startRecording() async {
-    if (_gsc.loginToken.toString().isEmpty) {
+    if (gsc.loginToken.toString().isEmpty) {
       okToast.showToast('Please login first');
       return;
     }
@@ -218,10 +214,10 @@ class _GopState extends State<Gop> {
 
   Future<void> uploadAudio() async {
     await wsSendWav(
-      host: _gsc.getServerIp(),
+      host: gsc.getServerIp(),
       port: ServerInfo.serverPort,
-      username: _gsc.username.toString(),
-      token: _gsc.loginToken.toString(),
+      username: gsc.username.toString(),
+      token: gsc.loginToken.toString(),
       wavPath: _wavPath,
       extName: _audioFormat,
       sentenceId: widget.sentenceId,
@@ -417,10 +413,10 @@ class _GopState extends State<Gop> {
       child: Text('Hear'),
       onPressed: () async {
         await downloadStdSpeech(
-          host: _gsc.getServerIp(),
+          host: gsc.getServerIp(),
           port: ServerInfo.serverPort,
-          username: _gsc.username.toString(),
-          token: _gsc.loginToken.toString(),
+          username: gsc.username.toString(),
+          token: gsc.loginToken.toString(),
           path: "std-speech",
           transcript: transcript,
           callback: (Uint8List data) async {
@@ -436,10 +432,10 @@ class _GopState extends State<Gop> {
       onPressed: () async {
         /// get tts from server
         await downloadStdSpeech(
-          host: _gsc.getServerIp(),
+          host: gsc.getServerIp(),
           port: ServerInfo.serverPort,
-          username: _gsc.username.toString(),
-          token: _gsc.loginToken.toString(),
+          username: gsc.username.toString(),
+          token: gsc.loginToken.toString(),
           path: "tts",
           transcript: transcript,
           callback: (Uint8List data) async {
@@ -465,9 +461,9 @@ class _GopState extends State<Gop> {
       child: Text('Help'),
       onPressed: () {
         createFeedback(
-          _gsc.getServerUrl(),
-          _gsc.username.toString(),
-          _gsc.loginToken.toString(),
+          gsc.getServerUrl(),
+          gsc.username.toString(),
+          gsc.loginToken.toString(),
           "Need help",
           widget.sentenceId,
         );
@@ -561,7 +557,7 @@ class _GopState extends State<Gop> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildPage(BuildContext context) {
     return Scaffold(
       appBar:
           utils.MyAppBar(title: utils.toUnicodeString('${widget.lessonName}')),

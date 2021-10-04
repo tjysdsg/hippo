@@ -33,6 +33,14 @@ class GlobalStateController extends GetxController {
   var onCampus = false.obs;
   KeyValueStore _cache;
 
+  /// the state of current active widget, used for refreshing the page if isOnCampus is updated
+  State<StatefulWidget> currentWidgetState;
+
+  setCurrentActiveWidgetState(State<StatefulWidget> state) {
+    debugPrint("Current active widget state is $state");
+    currentWidgetState = state;
+  }
+
   void init() async {
     _cache = KeyValueStore();
     await _cache.init();
@@ -56,6 +64,8 @@ class GlobalStateController extends GetxController {
 
   setIsOnCampus(bool val) {
     onCampus = RxBool(val);
+
+    currentWidgetState.setState(() {});
   }
 
   isOnCampus() {

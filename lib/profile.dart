@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:hippo/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:oktoast/oktoast.dart' as okToast;
+import 'package:hippo/base.dart';
 import 'dart:convert';
-import 'package:hippo/constants.dart' as constants;
 
 Future<String> login(String url, String username, String password) async {
   String token;
@@ -205,9 +205,9 @@ class _UserFormState extends State<UserForm> {
   }
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileState extends PageState<Profile> {
   @override
-  Widget build(BuildContext context) {
+  Widget buildPage(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('My Profile')),
       body: Padding(
