@@ -1,3 +1,4 @@
+*.jks
 gradle-wrapper.jar
 /.gradle
 /captures/
