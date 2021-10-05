@@ -1,5 +1,17 @@
 # 1.0.0
 
+## Update Oct 5th 2021
+
+Due to DKU policies, the backend server is migrated to a Duke server. However, Duke OIT requires
+that the IP used for extranet and intranet access is different. Basically it means we now have
+two separate ways for the client to load the data depending on whether if you are on campus.
+
+Therefore, this update added a switch for you to specify whether if you are on campus.
+By default, the switch is set to on campus.
+
+**If you are on campus, the switch must be ON, otherwise you won't be able to load
+anything. Similarly, if you are NOT on campus, the switch must be OFF.
+
 **Notice for beta testers**
 
 Hi, I'm Jiyang Tang, a DKU senior and the developer of this app. Thanks for testing this app!
