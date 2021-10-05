@@ -30,7 +30,7 @@ void main() async {
 class GlobalStateController extends GetxController {
   var loginToken = ''.obs;
   var username = ''.obs;
-  var onCampus = false.obs;
+  var onCampus = true.obs;
   KeyValueStore _cache;
 
   /// the state of current active widget, used for refreshing the page if isOnCampus is updated

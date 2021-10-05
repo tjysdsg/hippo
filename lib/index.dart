@@ -86,14 +86,16 @@ class _IndexState extends PageState<Index> {
                 title: Text(toUnicodeString(sentence.transcript)),
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Gop(
-                                lessonName: lesson.lessonName,
-                                sentenceId: sentence.id,
-                                transcript: sentence.transcript,
-                                explanation: sentence.explanation,
-                              )));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Gop(
+                        lessonName: lesson.lessonName,
+                        sentenceId: sentence.id,
+                        transcript: sentence.transcript,
+                        explanation: sentence.explanation,
+                      ),
+                    ),
+                  ).then((value) => gsc.setCurrentActiveWidgetState(this));
                 },
               ))
           .toList();
@@ -149,10 +151,9 @@ class _IndexState extends PageState<Index> {
       /// button to add new lessons by teachers
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => LessonEditor()),
-          );
+          await Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LessonEditor()))
+              .then((value) => gsc.setCurrentActiveWidgetState(this));
           refreshData();
         },
         child: Icon(Icons.add),
