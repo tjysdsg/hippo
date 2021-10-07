@@ -42,6 +42,7 @@ class GlobalStateController extends GetxController {
   }
 
   void init() async {
+    debugPrint('============================');
     _cache = KeyValueStore();
     await _cache.init();
     loginToken = RxString(_cache.get('loginToken', defaultValue: ''));

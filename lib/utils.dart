@@ -23,6 +23,10 @@ class _MyAppBar extends State<MyAppBar> {
   bool isOnCampus = true;
   final GlobalStateController _gsc = Get.find();
 
+  _MyAppBar() {
+    isOnCampus = _gsc.isOnCampus();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
